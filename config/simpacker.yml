@@ -1,0 +1,6 @@
+default: &default
+  manifest_path: public/packs/manifest.json
+
+development:
+  <<: *default
+  cache_manifest: false
