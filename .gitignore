@@ -7,6 +7,12 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore installed Gemfiles 
+/vendor/bundle
+
+# Ignore installed npm packages
+/node_modules
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
