@@ -1,3 +1,5 @@
 class TopController < ApplicationController
-  def index; end
+  def index
+    p 'index controller'
+  end
 end
