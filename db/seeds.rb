@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+p 'seed start'
+
+# import data
+girls = [
+  {
+    name: 'しずく',
+    age: 22
+  },
+  {
+    name: '中原かりん',
+    age: 24
+  },
+  {
+    name: '佐藤りんか',
+    age: 19
+  },
+  {
+    name: 'はな',
+    age: 27
+  },
+]
+
+# exec
+Girl.create(girls)
