@@ -1,3 +1,3 @@
 export const hoge = (): string => {
-  return "hogehoge";
+  return "test2";
 }
