@@ -1,18 +1,4 @@
-console.log("chorichori");
-// const element = document.getElementById('app');
-// const loginElement = document.getElementById('login');
+import { hoge } from './ts/test';
 
-if (element) {
-  // render(
-  //   <Router>
-  //     <ErrorBoundary>
-  //       <Base>
-  //         <Authenticate>
-  //           <Index />
-  //         </Authenticate>
-  //       </Base>
-  //     </ErrorBoundary>
-  //   </Router>,
-  //   element
-  // );
-}
+console.log("chorichori")
+alert(hoge());

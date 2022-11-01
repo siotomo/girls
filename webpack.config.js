@@ -14,6 +14,17 @@ module.exports = {
     publicPath: "/packs/",
     filename: isProd ? "[name]-[hash].js" : "[name].js"
   },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+      },
+    ],
+  },
   plugins: [
     new WebpackAssetsManifest({
       publicPath: true,
