@@ -5,10 +5,12 @@
       {
         "useBuiltIns": "usage",
         "corejs": 3,
-        "browserslist": [
-          "> 2%",
-          "IE 11"
-        ]
+        "targets": {
+          "browsers": [
+            "> 2%",
+            "IE 11"
+          ]
+        }
       }
     ]
   ]

@@ -2,6 +2,13 @@
   "compilerOptions": {
     "target": "ES5",
     "module": "ES2015",
-    "strict": true
-  }
+    "jsx": "react",
+    "strict": true,
+  },
+  "include": [
+    "app/javascript/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -7,7 +7,7 @@ const isProd = NODE_ENV === "production";
 module.exports = {
   mode: isProd ? "production" : "development",
   entry: {
-    'application': path.resolve(__dirname, "app/javascript/packs/application.js"),
+    'application': path.resolve(__dirname, "app/javascript/packs/application.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
@@ -15,15 +15,15 @@ module.exports = {
     filename: isProd ? "[name]-[hash].js" : "[name].js"
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.tsx'],
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: [
-          {loader: "babel-loader"},
+          {loader: 'babel-loader'},
           {loader: 'ts-loader'},
         ]
       }
