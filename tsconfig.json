@@ -4,9 +4,10 @@
     "module": "ES2015",
     "jsx": "react",
     "strict": true,
+    "moduleResolution": "node"
   },
   "include": [
-    "app/javascript/**/*"
+    "app/frontend/**/*"
   ],
   "exclude": [
     "node_modules"
