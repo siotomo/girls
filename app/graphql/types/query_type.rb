@@ -7,5 +7,6 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
     field :girls, resolver: Queries::Resolvers::Girls
+    field :girl, resolver: Queries::Resolvers::Girl
   end
 end
