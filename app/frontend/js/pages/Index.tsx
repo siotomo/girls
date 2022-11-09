@@ -9,7 +9,6 @@ import {
 import First from '../components/test/First';
 import Second from '../components/test/Second';
 import SecondParam from '../components/test/SecondParam';
-import Error from '../components/test/Error';
 
 const Index: React.FC = () => {
   const location = useLocation();
@@ -21,7 +20,7 @@ const Index: React.FC = () => {
 
   return (
     <>
-      This is index page
+      Hi! This is index page
 
       <Link to="/first">To First Page</Link>
       <Link to="/second">To Second Page</Link>
@@ -39,11 +38,8 @@ const Index: React.FC = () => {
         <Route path="/second/:id(\d+)">
           <SecondParam />
         </Route>
-        <Route path="/error">
-          <Error/>
-        </Route>
         <Route>
-          <Redirect to="/first" />
+          <Redirect to="/" />
         </Route>
       </Switch>
     </>
