@@ -4,12 +4,10 @@ module Queries
       type Types::GirlType, null: false
       description "Girlの取得"
 
-      argument :name, String, required: true, description: "Userのid"
+      argument :id, String, required: true, description: "Userのid"
  
-      def resolve
-        p 'resolver'
-        ::Girl.first
-        # ::Girl.find(params[:id])
+      def resolve(params)
+        ::Girl.find(params[:id])
       end
     end
   end
