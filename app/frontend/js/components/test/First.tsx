@@ -4,7 +4,7 @@ const First: React.FC = () => {
 
   return (
     <>
-      First Page
+      First Page Yes Mom! aa
     </>
   );
 };

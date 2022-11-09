@@ -1,5 +1,6 @@
 const path = require("path");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
+const LiveReloadPlugin = require("webpack-livereload-plugin");
 
 const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === "production";
@@ -33,6 +34,7 @@ module.exports = {
     new WebpackAssetsManifest({
       publicPath: true,
       output: "manifest.json",
-    })
+    }),
+    new LiveReloadPlugin()
   ]
 }
