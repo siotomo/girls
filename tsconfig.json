@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ES2015",
+    "jsx": "react",
+    "strict": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "app/frontend/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
