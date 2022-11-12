@@ -68,6 +68,7 @@ GEM
     debase (0.2.4.1)
       debase-ruby_core_source (>= 0.10.2)
     debase-ruby_core_source (0.10.17)
+    diffy (3.4.2)
     erubi (1.11.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -138,6 +139,9 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.6.0)
     rexml (3.2.5)
+    ridgepole (1.2.0)
+      activerecord (>= 5.1, < 7.1)
+      diffy
     rubocop (1.37.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -199,6 +203,7 @@ DEPENDENCIES
   listen (~> 3.3)
   puma (~> 5.0)
   rails (~> 6.1.5)
+  ridgepole
   rubocop (~> 1.22)
   rubocop-rails (~> 2.12)
   ruby-debug-ide

@@ -8,25 +8,9 @@
 
 p 'seed start'
 
-# import data
-girls = [
-  {
-    name: 'しずく',
-    age: 22
-  },
-  {
-    name: '中原かりん',
-    age: 24
-  },
-  {
-    name: '佐藤りんか',
-    age: 19
-  },
-  {
-    name: 'はな',
-    age: 27
-  },
-]
-
-# exec
-Girl.create(girls)
+# scrapingするまでの間のテストデータ
+test_date = Dir.glob(Rails.root.join('db/seeds/*.rb')).sort
+test_date.each do |f|
+  p f
+  load(f)
+end
