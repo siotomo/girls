@@ -1,6 +1,7 @@
 const path = require("path");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const LiveReloadPlugin = require("webpack-livereload-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === "production";
@@ -8,7 +9,7 @@ const isProd = NODE_ENV === "production";
 module.exports = {
   mode: isProd ? "production" : "development",
   entry: {
-    'application': path.resolve(__dirname, "app/frontend/js/packs/application.tsx"),
+    'application': path.resolve(__dirname, "app/frontend/js/packs/application.tsx")
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
@@ -27,6 +28,13 @@ module.exports = {
           {loader: 'babel-loader'},
           {loader: 'ts-loader'},
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
       }
     ],
   },
@@ -34,6 +42,9 @@ module.exports = {
     new WebpackAssetsManifest({
       publicPath: true,
       output: "manifest.json",
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
     }),
     new LiveReloadPlugin()
   ]
