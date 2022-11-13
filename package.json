@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "start": "webpack --progress --mode=development --watch",
-    "build": "webpack-cli"
+    "start": "webpack --progress --mode=development --watch"
   },
   "dependencies": {
     "core-js": "3"
