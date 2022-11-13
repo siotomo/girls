@@ -9,6 +9,8 @@ import {
 import First from '../components/test/First';
 import Second from '../components/test/Second';
 import SecondParam from '../components/test/SecondParam';
+import './test.css';
+import 'bulma/css/bulma.css'
 
 const Index: React.FC = () => {
   const location = useLocation();
@@ -21,8 +23,22 @@ const Index: React.FC = () => {
   return (
     <>
       Hi! This is index page
+      <div className="columns">
+        <div className="column">
+          First column
+        </div>
+        <div className="column">
+          Second column
+        </div>
+        <div className="column">
+          Third column
+        </div>
+        <div className="column">
+          Fourth column
+        </div>
+      </div>
 
-      <Link to="/first">To First Page</Link>
+      <Link className='test' to="/first">To First Page</Link>
       <Link to="/second">To Second Page</Link>
       <Link to="/second/12345">Redirect to Second Page With Params</Link>
       <Link to="/error">To Error Page</Link>
