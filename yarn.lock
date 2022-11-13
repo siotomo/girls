@@ -1736,6 +1736,11 @@ globals@^11.1.0:
   resolved "https://registry.npmjs.org/globals/-/globals-11.12.0.tgz"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
+gql-query-builder@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/gql-query-builder/-/gql-query-builder-3.7.2.tgz#1bf4db2b304deab1e7e5a84800ec1e057519e353"
+  integrity sha512-lMsr2OEaknicOfB59fODuPM9p5B9gx9McVFA+xwsCEtNiJEwVCVdSwwt/SJb/IjOfOTtDJ/3rs+jZ7X7sBzU0A==
+
 graceful-fs@^4.1.2, graceful-fs@^4.2.4, graceful-fs@^4.2.9:
   version "4.2.10"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.10.tgz"

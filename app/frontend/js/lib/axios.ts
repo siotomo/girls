@@ -1,14 +1,16 @@
 import originalAxios , {AxiosInstance} from 'axios';
+import { MetaHTMLAttributes } from 'react';
 
 export const csrfToken = (): string =>{
   const meta = <HTMLElement>document.querySelector('meta[name=csrf-token]');
+
   return meta['content'];
 };
 
 export const axios = (): AxiosInstance => {
   const token = csrfToken();
   const customAxios = originalAxios.create({
-    timeout: 10000,
+    timeout: 30000,
     headers: {
       'X-CSRF-Token': token,
     },

@@ -15,7 +15,6 @@ const RukaIndex: React.FC = () => {
   const buildRukaPath = (pathName: string) => `/ruka${pathName}`
 
   React.useEffect(() => {
-    console.log('new url comes');
     window.scrollTo(0,100);
   }, [location]);
 
