@@ -10,32 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_12_110029) do
+ActiveRecord::Schema.define(version: 0) do
 
-  create_table "admins", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "password_digest", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.integer "role", default: 1, null: false
-    t.boolean "is_deleted", default: false, null: false
-  end
-
-  create_table "girls", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "score"
-    t.integer "store_id"
-  end
-
-  create_table "stores", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "posts", "girls"
 end

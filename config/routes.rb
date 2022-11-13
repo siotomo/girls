@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   end
   post "/graphql", to: "graphql#execute"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'top#index'
+  
+  get '/', to: 'girls#index'
+  namespace :api do
+    resources :girls, only: [:index, :show]
+  end
 
-  get 'girls', to: 'girls#index'
-  get 'girl/:id', to: 'girls#show'
-  post 'girls', to: 'girls#add'
-
+  # For shiomi's test
   get 'ruka', to: 'ruka#index'
   get 'ruka/*path', to: 'ruka#index'
 end
