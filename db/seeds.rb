@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+p 'seed start'
+
+# scrapingするまでの間のテストデータ
+test_date = Dir.glob(Rails.root.join('db/seeds/*.rb')).sort
+test_date.each do |f|
+  p f
+  load(f)
+end

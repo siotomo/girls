@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "webpack --progress --mode=development --watch"
+  },
   "dependencies": {
     "bulma": "^0.9.4",
     "core-js": "3"
@@ -28,9 +31,5 @@
     "webpack-assets-manifest": "^5.1.0",
     "webpack-cli": "^4.10.0",
     "webpack-livereload-plugin": "^3.0.2"
-  },
-  "scripts": {
-    "webpack": "webpack --progress --mode=development --watch",
-    "webpack-cli": "webpack-cli"
   }
 }

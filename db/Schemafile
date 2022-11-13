@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+create_table "girls", id: :bigint, force: :cascade, charset: 'utf8mb4' do |t|
+  t.string "name"
+  t.integer "age"
+  t.integer "score"
+  t.integer "store_id", null: false
+  t.index ["store_id"], name: "index_girls_on_store_id"
+  t.datetime "created_at", precision: 6, null: false
+  t.datetime "updated_at", precision: 6, null: false
+end
+
+create_table "stores", id: :bigint, force: :cascade, charset: 'utf8mb4' do |t|
+  t.string "name"
+  t.datetime "created_at", precision: 6, null: false
+  t.datetime "updated_at", precision: 6, null: false
+end
