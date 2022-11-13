@@ -11,7 +11,7 @@ type Girl = {
   score: number;
 }
 
-const GirlList: React.FC = () => {
+const List: React.FC = () => {
   const [girls, setGirls] = React.useState<Girl[]>([]);
 
   const fetchGirls = React.useCallback(async () => {
@@ -26,10 +26,10 @@ const GirlList: React.FC = () => {
 
   return (
     <>
-      {!!girls.length && girls.map((girl, index) => {
+      {!!girls.length && girls.map((girl) => {
         return (
-          <Link to={`/api/girls/${girl.id}`} key={index}>
-            age: {girl.age} name: {girl.name}
+          <Link to={`/api/girls/${girl.id}`} key={girl.id}>
+            <p>age: {girl.age} name: {girl.name}</p>
           </Link>
         )
       })}
@@ -37,4 +37,4 @@ const GirlList: React.FC = () => {
   );
 };
 
-export default GirlList;
+export default List;

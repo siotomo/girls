@@ -9,7 +9,7 @@ type Girl = {
   score: number;
 }
 
-const GirlShow: React.FC = () => {
+const Detail: React.FC = () => {
   const [girl, setGirl] = React.useState<Girl>();
   const { id } = useParams() as { id: string };
 
@@ -36,4 +36,4 @@ const GirlShow: React.FC = () => {
   );
 };
 
-export default GirlShow;
+export default Detail;
