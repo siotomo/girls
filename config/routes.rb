@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   get 'girls', to: 'girls#index'
   get 'girl/:id', to: 'girls#show'
   post 'girls', to: 'girls#add'
+
+  get 'ruka', to: 'ruka#index'
+  get 'ruka/*path', to: 'ruka#index'
 end

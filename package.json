@@ -3,8 +3,10 @@
     "start": "webpack --progress --mode=development --watch"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.1",
     "bulma": "^0.9.4",
-    "core-js": "3"
+    "core-js": "3",
+    "graphql": "^16.6.0"
   },
   "name": "girls",
   "version": "1.0.0",

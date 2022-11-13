@@ -10,7 +10,9 @@
       "request": "launch",
       "program": "${workspaceRoot}/bin/rails",
       "args": [
-        "server"
+        "server",
+        "-p",
+        "3002"
       ],
       "useBundler": true,
     }
