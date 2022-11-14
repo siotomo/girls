@@ -6,8 +6,12 @@ const buildRukaPath = (pathName: string) => `/ruka${pathName}`
 const Index: React.FC = () => {
   return (
     <>
-      <Link to={buildRukaPath('/sample')}>To SamplePage</Link>
-      <Link to={buildRukaPath('/hoge')}>To HogePage</Link>
+      <p>
+        <Link to={buildRukaPath('/sample')}>To SamplePage</Link>
+      </p>
+      <p>
+        <Link to={buildRukaPath('/hoge')}>To HogePage</Link>
+      </p>
     </>
   );
 };

@@ -3,6 +3,7 @@ import {
   Link
 } from 'react-router-dom';
 import { axios } from '../../lib/axios';
+import { graphqlQuery } from '../../lib/graphql';
 
 type Girl = {
   id: number;
@@ -15,9 +16,12 @@ const List: React.FC = () => {
   const [girls, setGirls] = React.useState<Girl[]>([]);
 
   const fetchGirls = React.useCallback(async () => {
-    const res = await axios().get('/api/girls');
-    const girls: Girl[] = res.data;
-    setGirls(girls);
+    const queryObj = {
+      operation: 'girls',
+      fields: ['id', 'name', 'age']
+    }
+    const data = await graphqlQuery(queryObj)
+    setGirls(data.girls)  
   }, []);
 
   React.useEffect(() => {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { axios } from '../../lib/axios';
 import  { query } from 'gql-query-builder'
+import { graphqlQuery } from '../../lib/graphql';
 
 type Girl = {
   id: number;
@@ -11,18 +12,29 @@ type Girl = {
 
 const Sample: React.FC = () => {
   const [girls, setGirls] = React.useState<Girl[]>();
+  const [girl, setGirl] = React.useState<Girl>();
   const fetchGirls = React.useCallback(async () => {
-    const res = await axios().post('/graphql', query({
-        operation: 'girls',
-        fields: ['id', 'name', 'age']
-      })
-    );
-    const girls = res.data.data.girls;
-    setGirls(girls)
+    const queryObj = {
+      operation: 'girls',
+      fields: ['id', 'name', 'age']
+    }
+    const data = await graphqlQuery(queryObj)
+    setGirls(data.girls)  
+  },[])
+
+  const fetchGirl = React.useCallback(async () => {
+    const queryObj = {
+      operation: 'girl',
+      variables: {name: 'しずく'},
+      fields: ['id', 'name', 'age']
+    }
+    const data = await graphqlQuery(queryObj)
+    setGirl(data.girl)  
   },[])
 
   React.useEffect(() => {
     fetchGirls();
+    fetchGirl()
   }, []);
 
   return (
@@ -31,6 +43,20 @@ const Sample: React.FC = () => {
         Sample Page
       </h3>
 
+      <h3>Girl</h3>
+      {!!girl && (
+        <>
+          <p>------------</p>
+          <p>{girl.id}</p>
+          <p>{girl.name}</p>
+          <p>{girl.age}</p>
+          <p>------------</p>
+        </>
+      )}
+      <p>------------</p>
+      <p>------------</p>
+
+      <h3>Girls</h3>
       {!!girls && girls.map(girl => (
         <>
           <p>------------</p>

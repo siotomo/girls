@@ -12,7 +12,7 @@
       "args": [
         "server",
         "-p",
-        "3002"
+        "3003"
       ],
       "useBundler": true,
     }

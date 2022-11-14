@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { axios } from '../../lib/axios';
+import { graphqlQuery } from '../../lib/graphql';
+import * as gql from 'gql-query-builder';
 
 type Girl = {
   id: number;
@@ -14,10 +15,16 @@ const Detail: React.FC = () => {
   const { id } = useParams() as { id: string };
 
   const fetchGirl = React.useCallback(async () => {
-    const res = await axios().get(`/api/girls/${id}`);
-    const girl: Girl = res.data;
-    setGirl(girl);
-  }, []);
+    console.log('fetchGirl start')
+    console.log(id);
+    const queryObj = {
+      operation: 'girl',
+      variables: {id: id},
+      fields: ['id', 'name']
+    }
+    const data = await graphqlQuery(queryObj)
+    setGirl(data.girl)
+  }, [id, setGirl]);
 
   React.useEffect(() => {
     fetchGirl();
