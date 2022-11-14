@@ -25,7 +25,6 @@ const Sample: React.FC = () => {
   const fetchGirl = React.useCallback(async () => {
     const queryObj = {
       operation: 'girl',
-      variables: {name: 'しずく'},
       fields: ['id', 'name', 'age']
     }
     const data = await graphqlQuery(queryObj)
