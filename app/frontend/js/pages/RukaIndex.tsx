@@ -5,7 +5,6 @@ import {
   Link,
   useLocation
 } from 'react-router-dom';
-import 'bulma/css/bulma.css'
 import Sample from '../components/ruka/sample';
 import Hoge from '../components/ruka/hoge';
 import Index from '../components/ruka/Index';
