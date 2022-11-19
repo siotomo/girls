@@ -2,18 +2,18 @@ import * as React from 'react';
 import {
   Route, Switch,
 } from 'react-router-dom';
-import GirlList from '../components/girls/GirlList';
-import GirlShow from '../components/girls/GirlShow';
+import List from '../components/girls/List';
+import Detail from '../components/girls/Detail';
 
 const Index: React.FC = () => {
 
   return (
     <Switch>
       <Route exact path="/">
-        <GirlList />
+        <List />
       </Route>
       <Route path="/api/girls/:id(\d+)">
-        <GirlShow />
+        <Detail />
       </Route>
     </Switch>
   );

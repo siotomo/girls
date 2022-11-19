@@ -11,7 +11,7 @@ type Girl = {
   score: number;
 }
 
-const GirlList: React.FC = () => {
+const List: React.FC = () => {
   const [girls, setGirls] = React.useState<Girl[]>([]);
 
   const fetchGirls = React.useCallback(async () => {
@@ -37,4 +37,4 @@ const GirlList: React.FC = () => {
   );
 };
 
-export default GirlList;
+export default List;

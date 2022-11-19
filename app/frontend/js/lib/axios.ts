@@ -1,8 +1,8 @@
 import originalAxios , {AxiosInstance} from 'axios';
 
 export const csrfToken = (): string =>{
-  const meta = <HTMLElement>document.querySelector('meta[name=csrf-token]');
-  return meta['content'];
+  const meta = document.querySelector('meta[name=csrf-token]') as HTMLElement;
+  return meta.getAttribute('content') as string;
 };
 
 export const axios = (): AxiosInstance => {

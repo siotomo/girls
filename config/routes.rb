@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   namespace :api do
     resources :girls, only: [:index, :show]
   end
+  get '/*path', to: 'girls#index'
 end
