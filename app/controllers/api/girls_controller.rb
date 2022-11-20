@@ -1,13 +1,17 @@
-class Api::GirlsController < Api::ApplicationController
-  # def index
-  #   girls = Girl.all
+# frozen_string_literal: true
 
-  #   render json: girls
-  # end
+module Api
+  class GirlsController < Api::ApplicationController
+    # def index
+    #   girls = Girl.all
 
-  # def show
-  #   girl = Girl.find(params[:id])
+    #   render json: girls
+    # end
 
-  #   render json: girl
-  # end
+    # def show
+    #   girl = Girl.find(params[:id])
+
+    #   render json: girl
+    # end
+  end
 end
