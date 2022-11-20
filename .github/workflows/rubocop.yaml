@@ -1,0 +1,20 @@
+name: rubocop
+on: [pull_request]
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  rubocop:
+    name: OS install
+    runs-on: ubuntu-latest
+    steps:
+      - name: actions/checkout@v3
+        uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+      - name: exec rubocop
+        uses: reviewdog/action-rubocop@v2
+        with:
+          rubocop_version: gemfile
+          rubocop_extensions: rubocop-rails:gemfile
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
