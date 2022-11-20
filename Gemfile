@@ -29,11 +29,15 @@ group :development, :test do
 end
 
 group :development do
-  gem 'debase'
   gem 'listen', '~> 3.3'
+  # test
+  gem 'debase'
+  gem 'ruby-debug-ide'
+
+  # rubocop
   gem 'rubocop', '~> 1.22', require: false
   gem 'rubocop-rails', '~> 2.12', require: false
-  gem 'ruby-debug-ide'
+  gem 'code-scanning-rubocop', '~> 0.6.1' # for GitHub Actions
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
