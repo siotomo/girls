@@ -1,0 +1,15 @@
+version: '3'
+services:
+  api:
+      build:
+        context: .
+        dockerfile: Dockerfile.rails
+      tty: true
+      stdin_open: true
+      volumes:
+        - .:/var/www
+      working_dir: /var/www/
+      # working_dir: /var/www/api
+      command: bash -c "bash"
+      ports:
+        - '5001:3000'
