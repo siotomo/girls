@@ -1,0 +1,8 @@
+.p-visual-top::after{
+    right:100%;
+    animation:slideBg-arrow .75s 0s 1 forwards;
+}
+@keyframes slideBg-arrow{
+    0%{right:100%;}
+    100%{right:50%;}
+}

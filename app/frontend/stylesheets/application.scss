@@ -1,2 +1,8 @@
-@import "./shared/color";
-@import "./shared/modifier";
+// scss 構造全てに影響を与える関数・変数を定義するファイルを格納(ex:ブレイクポイント、各変数定義)
+@use 'global' as global;
+
+// 各コンテンツに使用するユニーク設定(ex: _top.scss ＠トップページ用設定ファイル)
+@use 'page' as page;
+
+// // サイトを通して使用される共通パーツ設定を格納するディレクトリで、ディレクトリ・ファイルは更新性を考慮して、細分化して管理します
+@use 'shared' as shared;
