@@ -5,7 +5,7 @@ permissions:
   pull-requests: write
 jobs:
   rubocop:
-    name: Rubocop
+    name: exec
     runs-on: ubuntu-latest
     steps:
       - name: actions/checkout@v3
