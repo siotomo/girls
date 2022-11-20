@@ -5,12 +5,13 @@ permissions:
   pull-requests: write
 jobs:
   rubocop:
-    name: Rubocop
+    name: exec
     runs-on: ubuntu-latest
     steps:
-      - name: actions/checkout@v3
+      - name: checkout to the branch
         uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
+      - name: setup ruby
+        uses: ruby/setup-ruby@v1
       - name: exec rubocop
         uses: reviewdog/action-rubocop@v2
         with:
