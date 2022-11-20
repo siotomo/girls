@@ -1,0 +1,10 @@
+@forward "animation";
+@forward "common";
+@forward "modifier";
+
+// 意味のある部品の最小単位(ex: button, navigation)
+@forward 'component';
+// componentを作るために必要な要素を定義(ex: flex, background)
+@forward 'layout';
+// componentを組み合わせてできる要素を定義(ex: header, footer)
+@forward 'utility';

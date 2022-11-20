@@ -4,11 +4,13 @@ import {
 } from 'react-router-dom';
 import List from '../components/girls/List';
 import Detail from '../components/girls/Detail';
+import '../../stylesheets/application.scss';
 
 const Index: React.FC = () => {
 
   return (
     <Switch>
+      <div className="test">testです</div>
       <Route exact path="/">
         <List />
       </Route>
