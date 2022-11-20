@@ -1,5 +1,6 @@
+
 class RukaController < ApplicationController
-  layout 'ruka.html.erb'  
+  layout 'ruka.html.erb'    
 
   def index; end
 end
