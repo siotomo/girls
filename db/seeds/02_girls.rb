@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 girls = [
   {
     store_id: 1,
@@ -18,7 +20,7 @@ girls = [
     store_id: 1,
     name: 'はな',
     age: 27
-  },
+  }
 ]
 Girl.delete_all
 Girl.create!(girls)
