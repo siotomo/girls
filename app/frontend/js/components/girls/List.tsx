@@ -2,7 +2,6 @@ import * as React from 'react';
 import {
   Link
 } from 'react-router-dom';
-import { axios } from '../../lib/axios';
 import { graphqlQuery } from '../../lib/graphql';
 
 type Girl = {
