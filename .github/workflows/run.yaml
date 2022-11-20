@@ -5,3 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "this is pen"
+
+name: master-pushed-notify
+on:
+  push:
+    branches:
+      - feature/test
+      jobs:
+        check-bats-version:
+          runs-on: ubuntu-latest
+          steps:
+            - run: echo "feature/test is pushed!"
