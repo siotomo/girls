@@ -4,6 +4,3 @@ Style/Documentation:
 
 Naming/MethodParameterName:
   Enabled: false
-
-Layout:
-  Enabled: false
