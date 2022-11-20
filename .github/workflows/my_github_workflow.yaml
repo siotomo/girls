@@ -7,7 +7,7 @@
 name: "Rubocop"
 
 on:
-  push:
+  ush:
     branches: [ $default-branch, $protected-branches, feature/test ]
   pull_request:
     # The branches below must be a subset of the branches above
@@ -29,7 +29,6 @@ jobs:
 
     - name: Install dependencies
       run: ls -la && bundle install && ls -la
-
 
     - name: Rubocop run
       run: |
