@@ -6,6 +6,7 @@
     "@apollo/client": "^3.7.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.14",
     "@mui/material": "^5.10.14",
     "core-js": "3",
     "gql-query-builder": "^3.7.2",
