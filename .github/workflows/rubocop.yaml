@@ -1,11 +1,11 @@
-name: rubocop
+name: Rubocop
 on: [pull_request]
 permissions:
   contents: read
   pull-requests: write
 jobs:
   rubocop:
-    name: OS install
+    name: Rubocop
     runs-on: ubuntu-latest
     steps:
       - name: actions/checkout@v3
