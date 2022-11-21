@@ -6,12 +6,16 @@ ENV LC_ALL=C
 
 # 必要なパッケージをインストール
 RUN apt-get update
-RUN apt-get install -y procps vim git gcc build-essential libreadline-dev zlib1g-dev libssl-dev curl wget imagemagick libmariadb-dev yarn
+RUN apt-get install -y procps vim git gcc build-essential libreadline-dev zlib1g-dev libssl-dev curl wget imagemagick libmariadb-dev
 # cron（定期実行）用にbusyboxをインストールする
 RUN apt-get install -y busybox-static
-# Rails6用にnodeをインストールする（バージョンも指定する）
-RUN curl -fsSL https://deb.nodesource.com/setup_16.14.0 | bash -
+# Rails6用にnodeをインストールする
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
+# yarnをインストールする
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install -y yarn
 
 # rubyとrailsをインストール
 RUN git clone --depth=1 https://github.com/rbenv/ruby-build && PREFIX=/usr/local ./ruby-build/install.sh && rm -rf ruby-build
@@ -24,7 +28,6 @@ ARG project_name="girls"
 # Gemfileのインストール
 RUN mkdir -p /var/www/${project_name}
 WORKDIR /var/www/${project_name}
-# 初回作成時、以下2行はコメントアウトする
-# COPY /${project_name}/Gemfile Gemfile
-# COPY /${project_name}/Gemfile.lock Gemfile.lock
+COPY ./Gemfile Gemfile
+COPY ./Gemfile.lock Gemfile.lock
 RUN bundle install

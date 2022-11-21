@@ -1,15 +1,14 @@
 version: '3'
 services:
-  api:
+  rails:
       build:
         context: .
         dockerfile: Dockerfile.rails
       tty: true
       stdin_open: true
       volumes:
-        - .:/var/www
-      working_dir: /var/www/
-      # working_dir: /var/www/api
+        - .:/var/www/girls
+      working_dir: /var/www/girls
       command: bash -c "bash"
       ports:
         - '5001:3000'
