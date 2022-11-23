@@ -10,7 +10,6 @@ const Index: React.FC = () => {
 
   return (
     <Switch>
-      <div className="test">testです</div>
       <Route exact path="/">
         <List />
       </Route>
