@@ -6,9 +6,8 @@ ENV LC_ALL=C
 
 # 必要なパッケージをインストール
 RUN apt-get update
-RUN apt-get install -y procps vim git gcc build-essential libreadline-dev zlib1g-dev libssl-dev curl wget imagemagick libmariadb-dev
-# cron（定期実行）用にbusyboxをインストールする
-RUN apt-get install -y busybox-static
+RUN apt-get install -y procps vim git gcc build-essential libreadline-dev zlib1g-dev libssl-dev curl wget imagemagick libmariadb-dev busybox-static
+
 # Rails6用にnodeをインストールする
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
@@ -22,12 +21,9 @@ RUN git clone --depth=1 https://github.com/rbenv/ruby-build && PREFIX=/usr/local
 RUN ruby-build 2.7.5 /usr/local
 RUN gem install -v 6.1.5 rails --no-document
 
-# プロジェクトディレクトリ名を変数化
-ARG project_name="girls"
-
 # Gemfileのインストール
-RUN mkdir -p /var/www/${project_name}
-WORKDIR /var/www/${project_name}
+RUN mkdir -p /var/www/girls
+WORKDIR /var/www/girls
 COPY ./Gemfile Gemfile
 COPY ./Gemfile.lock Gemfile.lock
 RUN bundle install

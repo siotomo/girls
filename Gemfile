@@ -32,6 +32,7 @@ group :development do
   gem 'ruby-debug-ide'
   gem 'rubocop', '~> 1.22'
   gem 'rubocop-rails', '~> 2.12'
+  gem 'foreman'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
