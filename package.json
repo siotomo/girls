@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "webpack --progress --mode=development --watch",
-    "lint": "eslint --color \"app/frontend/js/\" --ext .ts,.tsx --fix"
+    "lint:fix": "prettier \"app/frontend/js/\" --write && eslint --color \"app/frontend/js/\" --ext .ts,.tsx --fix"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
