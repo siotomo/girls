@@ -1,0 +1,14 @@
+version: '3'
+services:
+  rails:
+      build:
+        context: .
+        dockerfile: Dockerfile.rails
+      tty: true
+      stdin_open: true
+      volumes:
+        - .:/var/www/girls
+      working_dir: /var/www/girls
+      command: bundle exec foreman start
+      ports:
+        - '5001:3000'

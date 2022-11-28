@@ -73,6 +73,7 @@ GEM
     diffy (3.4.2)
     erubi (1.11.0)
     ffi (1.15.5)
+    foreman (0.87.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     graphiql-rails (1.8.0)
@@ -201,6 +202,7 @@ DEPENDENCIES
   byebug
   code-scanning-rubocop (~> 0.6.1)
   debase
+  foreman
   graphiql-rails
   graphql
   listen (~> 3.3)

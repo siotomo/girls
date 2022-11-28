@@ -12,3 +12,42 @@ https://tinkeringcorp.slack.com/archives/C03H9LA38BF
 - figma
 
 https://www.figma.com/files/project/57761143
+
+## Dockerでの起動手順
+1. プロジェクトディレクトリでターミナルを3タブ開く。
+それぞれDocker用、Rails用、yarn用。
+
+2. ポート番号はお好みに設定する
+ブラウザで開く際のポート番号（http://localhost:5001/）は、docker-compose.yml上では5001に設定されているので、http://localhost:3000/でアクセスしたい場合は、以下のように書き換えましょう。
+docker-compose.yml
+```yml
+ports:
+        - '3000:3000'
+```
+
+2. Dockerを起動する
+```bash
+docker-compose up
+```
+
+3. Dockerが起動したら、Rails用のターミナルでコンテナに入り、Railsサーバを起動する
+コンテナに入る
+```bash
+docker-compose exec rails bash
+```
+Railsを起動する
+```bash
+rails s -b 0.0.0.0
+```
+
+4. yarn用のターミナルでコンテナに入り、yarnを起動する
+コンテナに入る
+```bash
+docker-compose exec rails bash
+```
+yarnを起動する
+```bash
+yarn start
+```
+
+5. http://localhost:5001/にアクセス！

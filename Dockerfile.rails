@@ -1,0 +1,29 @@
+FROM debian:stable
+
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
+ENV LC_ALL=C
+
+# 必要なパッケージをインストール
+RUN apt-get update
+RUN apt-get install -y procps vim git gcc build-essential libreadline-dev zlib1g-dev libssl-dev curl wget imagemagick libmariadb-dev busybox-static
+
+# Rails6用にnodeをインストールする
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+# yarnをインストールする
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install -y yarn
+
+# rubyとrailsをインストール
+RUN git clone --depth=1 https://github.com/rbenv/ruby-build && PREFIX=/usr/local ./ruby-build/install.sh && rm -rf ruby-build
+RUN ruby-build 2.7.5 /usr/local
+RUN gem install -v 6.1.5 rails --no-document
+
+# Gemfileのインストール
+RUN mkdir -p /var/www/girls
+WORKDIR /var/www/girls
+COPY ./Gemfile Gemfile
+COPY ./Gemfile.lock Gemfile.lock
+RUN bundle install
