@@ -32,6 +32,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # debug
   gem 'debase'
+  gem 'foreman'
   gem 'ruby-debug-ide'
   gem 'foreman'
   # rubocop
