@@ -9,7 +9,8 @@ const isProd = NODE_ENV === "production";
 module.exports = {
   mode: isProd ? "production" : "development",
   entry: {
-    'application': path.resolve(__dirname, "app/frontend/js/packs/application.tsx")
+    'application': path.resolve(__dirname, "app/frontend/js/packs/application.tsx"),
+    'ruka': path.resolve(__dirname, "app/frontend/js/packs/ruka.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
@@ -30,10 +31,11 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader"
+          "css-loader",
+          "sass-loader"
         ]
       }
     ],
