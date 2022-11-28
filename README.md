@@ -32,7 +32,7 @@ docker-compose up
 
 3. `http://localhost:5001/`にアクセス！
 
-Dockerが起動すると、Railsもyarnも起動するようになっているよ！
+Dockerが起動すると、RailsServerとwebpackのLiveReloadも起動するようになっているよ！
 
 ### Railsコンソールを開くには
 1. ターミナルのタブをもう1つ開き、以下のコマンドでコンテナのbashに入る
@@ -44,5 +44,5 @@ docker-compose exec rails bash
 2. Railsコンソールに入る
 
 ```bash
-rails c
+bundle exec rails c
 ```
