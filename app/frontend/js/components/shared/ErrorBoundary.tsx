@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ErrorInfo} from 'react';
+import { ErrorInfo } from 'react';
 
 export interface Props {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export interface State {
 }
 
 class ErrorBoundary extends React.Component<Props, State> {
-  state: State = {error: null, errorInfo: null};
+  state: State = { error: null, errorInfo: null };
 
   componentDidCatch(error: Error | null, errorInfo: ErrorInfo) {
     this.setState({
@@ -34,7 +34,7 @@ class ErrorBoundary extends React.Component<Props, State> {
       );
     }
 
-    return this.props.children
+    return this.props.children;
   }
 }
 

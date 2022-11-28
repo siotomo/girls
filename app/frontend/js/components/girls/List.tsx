@@ -1,7 +1,5 @@
 import * as React from 'react';
-import {
-  Link
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { graphqlQuery } from '../../lib/graphql';
 
 type Girl = {
@@ -9,7 +7,7 @@ type Girl = {
   name: string;
   age: number;
   score: number;
-}
+};
 
 const List: React.FC = () => {
   const [girls, setGirls] = React.useState<Girl[]>([]);
@@ -17,10 +15,10 @@ const List: React.FC = () => {
   const fetchGirls = React.useCallback(async () => {
     const queryObj = {
       operation: 'girls',
-      fields: ['id', 'name', 'age']
-    }
-    const data = await graphqlQuery(queryObj)
-    setGirls(data.girls)  
+      fields: ['id', 'name', 'age'],
+    };
+    const data = await graphqlQuery(queryObj);
+    setGirls(data.girls);
   }, []);
 
   React.useEffect(() => {
@@ -29,13 +27,16 @@ const List: React.FC = () => {
 
   return (
     <>
-      {!!girls.length && girls.map((girl) => {
-        return (
-          <Link to={`/api/girls/${girl.id}`} key={girl.id}>
-            <p>age: {girl.age} name: {girl.name}</p>
-          </Link>
-        )
-      })}
+      {!!girls.length &&
+        girls.map((girl) => {
+          return (
+            <Link to={`/api/girls/${girl.id}`} key={girl.id}>
+              <p>
+                age: {girl.age} name: {girl.name}
+              </p>
+            </Link>
+          );
+        })}
     </>
   );
 };

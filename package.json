@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "webpack --progress --mode=development --watch",
+    "lint": "eslint --color \"app/frontend/js/\" --ext .ts,.tsx",
     "lint:fix": "prettier \"app/frontend/js/\" --write && eslint --color \"app/frontend/js/\" --ext .ts,.tsx --fix"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
-import originalAxios , {AxiosInstance} from 'axios';
+import originalAxios, { AxiosInstance } from 'axios';
 import { MetaHTMLAttributes } from 'react';
 
-export const csrfToken = (): string =>{
+export const csrfToken = (): string => {
   const meta = document.querySelector('meta[name=csrf-token]') as HTMLElement;
   return meta.getAttribute('content') as string;
 };
@@ -14,16 +14,19 @@ export const axios = (): AxiosInstance => {
       'X-CSRF-Token': token,
     },
   });
-  customAxios.interceptors.response.use((response) => {
-    return response;
-  }, (error) => {
-    if (error.response.status == 401) {
-      alert('読み込みに失敗しました。ページを再読み込みして下さい。')
+  customAxios.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      if (error.response.status == 401) {
+        alert('読み込みに失敗しました。ページを再読み込みして下さい。');
+        return;
+      }
+
+      alert('読み込みに失敗しました。');
       return;
     }
-
-    alert('読み込みに失敗しました。')
-    return;
-  });
+  );
   return customAxios;
 };

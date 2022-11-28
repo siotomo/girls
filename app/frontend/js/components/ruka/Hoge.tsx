@@ -1,12 +1,9 @@
 import * as React from 'react';
 
 const Hoge: React.FC = () => {
-
   return (
     <>
-      <h3>
-        Hoge Page
-      </h3>
+      <h3>Hoge Page</h3>
     </>
   );
 };
