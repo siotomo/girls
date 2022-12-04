@@ -9,6 +9,6 @@ services:
       volumes:
         - .:/var/www/girls
       working_dir: /var/www/girls
-      command: bundle exec foreman start
+      # command: bundle exec foreman start
       ports:
         - '5001:3000'
