@@ -1,5 +1,4 @@
 import originalAxios, { AxiosInstance } from 'axios';
-import { MetaHTMLAttributes } from 'react';
 
 export const csrfToken = (): string => {
   const meta = document.querySelector('meta[name=csrf-token]') as HTMLElement;
@@ -18,7 +17,7 @@ export const axios = (): AxiosInstance => {
     (response) => {
       return response;
     },
-    (error) => {
+    (error: {response: {status: number}}) => {
       if (error.response.status == 401) {
         alert('読み込みに失敗しました。ページを再読み込みして下さい。');
         return;

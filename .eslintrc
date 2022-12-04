@@ -8,6 +8,8 @@
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"airbnb",
+		"airbnb/hooks",
 		"prettier"
 	],
 	"parserOptions": {

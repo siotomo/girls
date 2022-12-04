@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route, Link, useLocation } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import Sample from '../components/ruka/sample';
 import Hoge from '../components/ruka/hoge';
 import Index from '../components/ruka/Index';

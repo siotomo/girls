@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { axios } from '../../lib/axios';
-import { query } from 'gql-query-builder';
 import { graphqlQuery } from '../../lib/graphql';
 
 type Girl = {
@@ -28,13 +26,19 @@ const Sample: React.FC = () => {
       fields: ['id', 'name', 'age'],
     };
     const data = await graphqlQuery(queryObj);
-    setGirl(data.girl);
+    setGirl(data.girls[0]);
   }, []);
+
+  React.useEffect(() => {
+    (async (): Promise<void> => {
+      await fetchGirl();
+    })();
+  }, [fetchGirl]);
 
   React.useEffect(() => {
     fetchGirls();
     fetchGirl();
-  }, []);
+  }, [fetchGirls, fetchGirl]);
 
   return (
     <>

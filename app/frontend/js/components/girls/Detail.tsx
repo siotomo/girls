@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import { graphqlQuery } from '../../lib/graphql';
-import * as gql from 'gql-query-builder';
 
 type Girl = {
   id: number;
@@ -12,23 +11,23 @@ type Girl = {
 
 const Detail: React.FC = () => {
   const [girl, setGirl] = React.useState<Girl>();
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
-  const fetchGirl = React.useCallback(async () => {
-    console.log('fetchGirl start');
-    console.log(id);
+  const fetchGirl = React.useCallback(async (): Promise<void> => {
     const queryObj = {
       operation: 'girl',
       variables: { id: id },
       fields: ['id', 'name'],
     };
     const data = await graphqlQuery(queryObj);
-    setGirl(data.girl);
-  }, [id, setGirl]);
+    setGirl(data.girls[0]);
+  }, [id]);
 
   React.useEffect(() => {
-    fetchGirl();
-  }, []);
+    (async (): Promise<void> => {
+      await fetchGirl();
+    })();
+  }, [fetchGirl]);
 
   return (
     <>
