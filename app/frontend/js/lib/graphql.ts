@@ -1,6 +1,6 @@
 import { query } from 'gql-query-builder';
-import { axios } from './axios';
 import { AxiosResponse } from 'axios';
+import { axios } from './axios';
 
 type queryObj = {
   operation: string;

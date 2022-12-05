@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const buildRukaPath = (pathName: string) => `/ruka${pathName}`;
 
-const Index: React.FC = () => {
-  return (
+const Index: React.FC = () => (
     <>
       <p>
         <Link to={buildRukaPath('/sample')}>To SamplePage</Link>
@@ -14,6 +13,5 @@ const Index: React.FC = () => {
       </p>
     </>
   );
-};
 
 export default Index;

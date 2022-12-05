@@ -4,8 +4,7 @@ import List from '../components/girls/List';
 import Detail from '../components/girls/Detail';
 import '../../stylesheets/application.scss';
 
-const Index: React.FC = () => {
-  return (
+const Index: React.FC = () => (
     <Switch>
       <Route exact path="/">
         <List />
@@ -15,6 +14,5 @@ const Index: React.FC = () => {
       </Route>
     </Switch>
   );
-};
 
 export default Index;

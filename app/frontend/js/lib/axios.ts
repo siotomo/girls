@@ -14,17 +14,15 @@ export const axios = (): AxiosInstance => {
     },
   });
   customAxios.interceptors.response.use(
-    (response) => {
-      return response;
-    },
-    (error: {response: {status: number}}) => {
+    (response) => response,
+    (error: { response: { status: number } }) => {
       if (error.response.status == 401) {
         alert('読み込みに失敗しました。ページを再読み込みして下さい。');
         return;
       }
 
       alert('読み込みに失敗しました。');
-      return;
+      
     }
   );
   return customAxios;

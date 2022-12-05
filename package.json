@@ -2,7 +2,8 @@
   "scripts": {
     "start": "webpack --progress --mode=development --watch",
     "lint": "eslint --color \"app/frontend/js/\" --ext .ts,.tsx",
-    "lint:fix": "prettier \"app/frontend/js/\" --write && eslint --color \"app/frontend/js/\" --ext .ts,.tsx --fix"
+    "lint:fix": "prettier \"app/frontend/js/\" --write && eslint --color \"app/frontend/js/\" --ext .ts,.tsx --fix",
+    "lint_only_diff_files": "prettier $(git diff --name-only --diff-filter=dr master | grep -E \"(.js$|.ts$|.tsx$)\") --write && eslint --color $(git diff --name-only --diff-filter=dr master | grep -E \"(.js$|.ts$|.tsx$)\")"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
@@ -10,9 +11,14 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.14",
     "@mui/material": "^5.10.14",
+    "axios": "^1.2.0",
     "core-js": "3",
+    "eslint-plugin-react": "^7.31.11",
     "gql-query-builder": "^3.7.2",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.4"
   },
   "name": "girls",
   "version": "1.0.0",
@@ -29,21 +35,17 @@
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": ">=5.43.0",
     "@typescript-eslint/parser": ">=5.43.0",
-    "axios": "^1.1.3",
     "babel-loader": "^9.0.1",
     "css-loader": "^6.7.1",
     "eslint": ">=8.0.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react": "^1.1.7",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "mini-css-extract-plugin": "^2.6.1",
     "prettier": "^2.8.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^5.2.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",

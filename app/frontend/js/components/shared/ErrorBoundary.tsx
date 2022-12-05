@@ -15,22 +15,22 @@ class ErrorBoundary extends React.Component<Props, State> {
 
   componentDidCatch(error: Error | null, errorInfo: ErrorInfo) {
     this.setState({
-      error: error,
-      errorInfo: errorInfo,
+      error,
+      errorInfo,
     });
   }
 
   render() {
     if (this.state.errorInfo) {
       return (
-        <React.Fragment>
+        <>
           <h2>エラーが発生しました。</h2>
           <details>
             {this.state.error && this.state.error.toString()}
             <br />
             {this.state.errorInfo.componentStack}
           </details>
-        </React.Fragment>
+        </>
       );
     }
 

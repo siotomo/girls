@@ -4,10 +4,14 @@
 		"es2021": true
 	},
 	"extends": [
+		// eslintの設定ファイルのindex
+		// https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/index.ts
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		// airbnb rules
+		// https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
 		"airbnb",
 		"airbnb/hooks",
 		"prettier"
