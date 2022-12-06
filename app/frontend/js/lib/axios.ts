@@ -22,7 +22,6 @@ export const axios = (): AxiosInstance => {
       }
 
       alert('読み込みに失敗しました。');
-      
     }
   );
   return customAxios;

@@ -4,16 +4,18 @@
 		"es2021": true
 	},
 	"extends": [
-		// eslintの設定ファイルのindex
-		// https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/index.ts
+		// https://github.com/eslint/eslint/blob/main/conf/eslint-recommended.js
+		// https://eslint.org/docs/latest/rules/
 		"eslint:recommended",
+		// https://github.com/jsx-eslint/eslint-plugin-react/blob/master/configs/recommended.js
+		// https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules
 		"plugin:react/recommended",
+		// https://reactjs.org/docs/hooks-rules.html
 		"plugin:react-hooks/recommended",
+		// https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
+		// https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
-		// airbnb rules
-		// https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
-		"airbnb",
-		"airbnb/hooks",
+		"google",
 		"prettier"
 	],
 	"parserOptions": {
