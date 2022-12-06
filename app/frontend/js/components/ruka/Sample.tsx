@@ -30,14 +30,8 @@ const Sample: React.FC = () => {
   }, []);
 
   React.useEffect(() => {
-    (async (): Promise<void> => {
-      await fetchGirl();
-    })();
-  }, [fetchGirl]);
-
-  React.useEffect(() => {
-    fetchGirls();
-    fetchGirl();
+    void fetchGirls();
+    void fetchGirl();
   }, [fetchGirls, fetchGirl]);
 
   return (

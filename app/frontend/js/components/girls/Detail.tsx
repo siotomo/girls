@@ -24,9 +24,7 @@ const Detail: React.FC = () => {
   }, [id]);
 
   React.useEffect(() => {
-    (async (): Promise<void> => {
-      await fetchGirl();
-    })();
+    void fetchGirl();
   }, [fetchGirl]);
 
   return (

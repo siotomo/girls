@@ -22,7 +22,7 @@ const List: React.FC = () => {
   }, []);
 
   React.useEffect(() => {
-    fetchGirls();
+    void fetchGirls();
   }, [fetchGirls]);
 
   return (
