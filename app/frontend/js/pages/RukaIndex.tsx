@@ -1,20 +1,15 @@
 import * as React from 'react';
-import {
-  Switch,
-  Route,
-  Link,
-  useLocation
-} from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import Sample from '../components/ruka/sample';
 import Hoge from '../components/ruka/hoge';
 import Index from '../components/ruka/Index';
 
 const RukaIndex: React.FC = () => {
   const location = useLocation();
-  const buildRukaPath = (pathName: string) => `/ruka${pathName}`
+  const buildRukaPath = (pathName: string) => `/ruka${pathName}`;
 
   React.useEffect(() => {
-    window.scrollTo(0,100);
+    window.scrollTo(0, 100);
   }, [location]);
 
   return (
@@ -22,17 +17,17 @@ const RukaIndex: React.FC = () => {
       <h1 onClick={() => alert(buildRukaPath(''))}>RukaIndex.tsx</h1>
       <Switch>
         <Route exact path={buildRukaPath('')}>
-          <Index/>
+          <Index />
         </Route>
         <Route path={buildRukaPath('/sample')}>
-          <Sample/>
+          <Sample />
         </Route>
         <Route path={buildRukaPath('/hoge')}>
-          <Hoge/>
+          <Hoge />
         </Route>
       </Switch>
     </>
-  )
-}
+  );
+};
 
 export default RukaIndex;
