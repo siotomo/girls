@@ -26,6 +26,7 @@ const List: React.FC = () => {
   }, [fetchGirls]);
 
   const hoge = 1;
+  const fuga = 2;
   console.log('aaa');
 
   return (
