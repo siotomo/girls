@@ -25,6 +25,8 @@ const List: React.FC = () => {
     void fetchGirls();
   }, [fetchGirls]);
 
+  console.log("aaa");
+
   return (
     <>
       {!!girls.length &&
