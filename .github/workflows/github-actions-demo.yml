@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: yarn install
-      - run: yarn lint:fix
+      - run: eslint --color $(git diff --name-only --diff-filter=dr HEAD | grep -E \"(.js$|.ts$|.tsx$)\")
