@@ -11,8 +11,6 @@ jobs:
         with:
           PATTERNS: |
             +app/frontend/js/**/*.(ts|tsx|js)
-          FROM: main
-          TO: context.ref
           DOT: '...'
           DIFF_FILTER: 'AMR'
       - uses: reviewdog/action-eslint@v1
