@@ -11,3 +11,4 @@ jobs:
           node-version: '16'
       - run: npm install -g yarn
       - run: yarn -v
+      - run: ls
