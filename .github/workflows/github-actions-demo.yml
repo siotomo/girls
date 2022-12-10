@@ -19,4 +19,4 @@ jobs:
         with:
           reporter: github-check
           eslint_flags: ${{ env.GIT_DIFF }}
-      - run: ${{ env.GIT_DIFF }} ${ FROM } ${ TO }
+      - run: ${{ env.GIT_DIFF }}
