@@ -4,15 +4,17 @@ import List from '../components/girls/List';
 import Detail from '../components/girls/Detail';
 import '../../stylesheets/application.scss';
 
-const Index: React.FC = () => (
-  <Switch>
-    <Route exact path="/">
-      <List />
-    </Route>
-    <Route path="/api/girls/:id(\d+)">
-      <Detail />
-    </Route>
-  </Switch>
-);
+const Index: React.FC = () => {
+  return (
+    <Switch>
+      <Route exact path="/girls">
+        <List />
+      </Route>
+      <Route path="/girls/:id(\d+)">
+        <Detail />
+      </Route>
+    </Switch>
+  );
+};
 
 export default Index;
