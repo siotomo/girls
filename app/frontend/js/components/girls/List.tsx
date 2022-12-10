@@ -25,6 +25,7 @@ const List: React.FC = () => {
     void fetchGirls();
   }, [fetchGirls]);
 
+  const hoge = 1;
   console.log('aaa');
 
   return (

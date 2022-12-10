@@ -7,8 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: yarn install
-      - uses: reviewdog/action-eslint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          eslint_flags: .
+      - run: yarn lint_only_diff_files
