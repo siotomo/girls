@@ -9,9 +9,8 @@ jobs:
       - run: yarn install
       - uses: technote-space/get-diff-action@v6
         with:
-          PATTERNS: '*.(ts|tsx)'
-          RELATIVE: 'app/frontend/js'
-          DIFF_FILTER: 'AMR'
+          PATTERNS: app/frontend/js/**/*.(ts|tsx)
+          DIFF_FILTER: 'ACMR'
       - uses: reviewdog/action-eslint@v1
         with:
           reporter: github-check
