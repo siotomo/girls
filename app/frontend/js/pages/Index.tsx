@@ -10,10 +10,10 @@ const Index: React.FC = () => {
 
   return (
     <Switch>
-      <Route exact path="/">
+      <Route exact path="/girls">
         <List />
       </Route>
-      <Route path="/api/girls/:id(\d+)">
+      <Route path="/girls/:id(\d+)">
         <Detail />
       </Route>
     </Switch>
