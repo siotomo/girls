@@ -26,4 +26,5 @@ RUN mkdir -p /var/www/girls
 WORKDIR /var/www/girls
 COPY ./Gemfile Gemfile
 COPY ./Gemfile.lock Gemfile.lock
-RUN bundle install
+RUN bundle config set --local path vendor/bundle && bundle install
+CMD ["bundle", "exec", "foreman", "start"]
