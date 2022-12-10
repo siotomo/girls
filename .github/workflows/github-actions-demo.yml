@@ -14,6 +14,6 @@ jobs:
           DIFF_FILTER: 'AMR'
       - uses: reviewdog/action-eslint@v1
         with:
-          reporter: github-check
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
           eslint_flags: ${{ env.GIT_DIFF_FILTERED }}
-      - run: ${{ env.GIT_DIFF }}
