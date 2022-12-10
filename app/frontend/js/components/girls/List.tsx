@@ -25,7 +25,7 @@ const List: React.FC = () => {
     void fetchGirls();
   }, [fetchGirls]);
 
-  console.log("aaa");
+  console.log('aaa');
 
   return (
     <>

@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: yarn install
-      - run: yarn lint_only_diff_files
+      - run: yarn lint:fix
