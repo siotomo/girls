@@ -12,6 +12,7 @@ type Girl = {
 const Detail: React.FC = () => {
   const [girl, setGirl] = React.useState<Girl>();
   const { id } = useParams<{ id: string }>();
+  console.log("detail");
 
   const fetchGirl = React.useCallback(async (): Promise<void> => {
     const queryObj = {
