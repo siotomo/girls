@@ -13,6 +13,7 @@ const Detail: React.FC = () => {
   const [girl, setGirl] = React.useState<Girl>();
   const { id } = useParams<{ id: string }>();
   console.log("detail");
+  const hoge = 1;
 
   const fetchGirl = React.useCallback(async (): Promise<void> => {
     const queryObj = {

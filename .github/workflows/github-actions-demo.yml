@@ -12,9 +12,5 @@ jobs:
           PATTERNS: |
             app/frontend/js/**/*.+(ts|tsx)
           DIFF_FILTER: 'ACMR'
-      - uses: reviewdog/action-eslint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          eslint_flags: ${{ env.GIT_DIFF_FILTERED }}
+      - run: eslint ${{ env.GIT_DIFF_FILTERED }}
       - run: echo ${{ env.GIT_DIFF_FILTERED }}
