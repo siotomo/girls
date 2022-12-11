@@ -15,4 +15,4 @@ jobs:
         with:
           reporter: github-check
           eslint_flags: ${{ env.GIT_DIFF_FILTERED }}
-      - run: echo ${{ env.GIT_DIFF_FILTERED }}
+      - run: echo '${{ env.GIT_DIFF_FILTERED }}'
