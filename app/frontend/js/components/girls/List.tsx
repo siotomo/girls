@@ -34,7 +34,7 @@ const List: React.FC = () => {
       {!!girls.length &&
         girls.map((girl) => (
           <Link to={`/api/girls/${girl.id}`} key={girl.id}>
-            <p>
+            <p className='fuga'>
               age: {girl.age} name: {girl.name}
             </p>
           </Link>
