@@ -1,6 +1,6 @@
 name: ESLint
 run-name: ${{ github.actor }} is executing ESLint
-on: [pull_request]
+on: [push]
 jobs:
   eslint:
     runs-on: ubuntu-latest
