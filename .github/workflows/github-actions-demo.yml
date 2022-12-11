@@ -9,5 +9,5 @@ jobs:
       - run: yarn install
       - uses: reviewdog/action-eslint@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           eslint_flags: 'app/frontend/js/**/*.{ts,tsx,js}'
+          fail_on_error: 'true'
