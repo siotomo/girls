@@ -23,6 +23,8 @@ const Detail: React.FC = () => {
     fetchGirl();
   }, [fetchGirl]);
 
+  console.log("hoge");
+
   return (
     <>
       {girl && (
