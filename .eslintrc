@@ -29,6 +29,7 @@
 		}
 	},
 	"rules": {
+		"require-jsdoc": ["off"],
 		"@typescript-eslint/no-floating-promises": [
 			"error",
 			{
