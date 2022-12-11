@@ -12,4 +12,4 @@ jobs:
         with:
           reporter: github-check
           eslint_flags: app/frontend/js/
-          fail_on_error: 'true'
+          fail_on_error: true
