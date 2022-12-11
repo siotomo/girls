@@ -12,5 +12,5 @@ jobs:
           PATTERNS: |
             app/frontend/js/**/*.+(ts|tsx)
           DIFF_FILTER: 'ACMR'
-      - run: eslint ${{ env.GIT_DIFF_FILTERED }}
+      - run: yarn eslint ${{ env.GIT_DIFF_FILTERED }}
       - run: echo ${{ env.GIT_DIFF_FILTERED }}
