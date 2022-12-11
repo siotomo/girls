@@ -15,6 +15,6 @@ jobs:
       - uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
-      - run: yarn eslint ${{ env.GIT_DIFF_FILTERED }} | reviewdog -f=eslint -reporter=github-pr-review -fail-on-error=true
         env:
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.github_token }}
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
+        run: yarn eslint ${{ env.GIT_DIFF_FILTERED }} | reviewdog -f=eslint -reporter=github-pr-review -fail-on-error=true
