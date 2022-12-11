@@ -14,5 +14,6 @@ jobs:
           DIFF_FILTER: 'ACMR'
       - uses: reviewdog/action-eslint@v1
         with:
-          eslint_flags: 'app/frontend/js/components/girls/Detail.tsx'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          eslint_flags: 'app/frontend/js/'
       - run: echo ${{ env.GIT_DIFF_FILTERED }}
