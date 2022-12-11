@@ -10,4 +10,4 @@ jobs:
       - uses: reviewdog/action-eslint@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          eslint_flags: 'src/**/*.{ts,tsx,js,jsx}'
+          eslint_flags: 'app/frontend/js/**/*.{ts,tsx,js}'
