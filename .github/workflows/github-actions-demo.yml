@@ -17,4 +17,4 @@ jobs:
           reviewdog_version: latest
       - env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
-        run: yarn eslint ${{ env.GIT_DIFF_FILTERED }} | reviewdog -runners=eslint -f=eslint -reporter=github-pr-review -fail-on-error=true
+        run: yarn eslint ${{ env.GIT_DIFF_FILTERED }} | reviewdog -f=checkstyle -f=eslint -reporter=github-pr-review -fail-on-error=true
