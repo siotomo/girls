@@ -9,4 +9,5 @@ jobs:
       - run: yarn install
       - uses: reviewdog/action-eslint@v1
         with:
-          fail_on_error: 'true'
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
