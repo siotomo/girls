@@ -9,4 +9,4 @@ jobs:
         uses: actions/checkout@v3
       - name: exec eslint
         uses: reviewdog/action-eslint@v1
-        run: yarn lint
+      - run: yarn lint
