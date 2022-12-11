@@ -1,9 +1,6 @@
 name: ESLint Test
 run-name: ${{ github.actor }} is testing out ESLint 🚀
 on: [push]
-permissions:
-  contents: read
-  pull-requests: write
 jobs:
   eslint:
     runs-on: ubuntu-latest
@@ -15,8 +12,7 @@ jobs:
           PATTERNS: |
             app/frontend/js/**/*.+(ts|tsx)
           DIFF_FILTER: 'ACMR'
-      - uses: reviewdog/action-eslint@v1
+      - uses: reviewdog/action-setup@v1
         with:
-          github_token: ${{ github.token }}
-          eslint_flags: 'app/frontend/js/'
-      - run: echo ${{ env.GIT_DIFF_FILTERED }}
+          reviewdog_version: latest
+      - run: yarn eslint ${{ env.GIT_DIFF_FILTERED }} | reviewdog -reporter=github-pr-review -fail-on-error=true
