@@ -6,7 +6,7 @@ export const csrfToken = (): string => {
 };
 
 export const axios = (): AxiosInstance => {
-  console.log("test");
+  console.log('test');
   const token = csrfToken();
   const customAxios = originalAxios.create({
     timeout: 30000,
