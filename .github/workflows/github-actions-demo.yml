@@ -10,7 +10,7 @@ jobs:
       - uses: technote-space/get-diff-action@v6
         with:
           PATTERNS: |
-            app/frontend/js/**/*.(ts|tsx)
+            +app/frontend/js/**/*.(ts|tsx)
       - uses: reviewdog/action-eslint@v1
         with:
           reporter: github-check
