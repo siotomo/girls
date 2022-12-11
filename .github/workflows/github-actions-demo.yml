@@ -14,5 +14,5 @@ jobs:
           DIFF_FILTER: 'ACMR'
       - uses: reviewdog/action-eslint@v1
         with:
-          eslint_flags: ${{ env.GIT_DIFF_FILTERED }}
+          eslint_flags: '${{ env.GIT_DIFF_FILTERED }}'
       - run: echo ${{ env.GIT_DIFF_FILTERED }}
