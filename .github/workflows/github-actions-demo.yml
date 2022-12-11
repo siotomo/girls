@@ -11,6 +11,7 @@ jobs:
         with:
           PATTERNS: |
             app/frontend/js/**/*.ts
+            app/frontend/js/**/*.tsx
       - run: echo ${{ env.GIT_DIFF_FILTERED }}
       - uses: reviewdog/action-eslint@v1
         with:
