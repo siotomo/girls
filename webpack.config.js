@@ -8,6 +8,7 @@ const isProd = NODE_ENV === "production";
 
 module.exports = {
   mode: isProd ? "production" : "development",
+  devtool: isProd ? false : "source-map",
   entry: {
     'application': path.resolve(__dirname, "app/frontend/js/packs/application.tsx"),
     'ruka': path.resolve(__dirname, "app/frontend/js/packs/ruka.tsx"),
@@ -34,8 +35,14 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
+          {
+            loader: 'css-loader',
+            options: { sourceMap: !isProd }
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: !isProd }
+          }
         ]
       }
     ],
@@ -46,7 +53,7 @@ module.exports = {
       output: "manifest.json",
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: "[name]-[hash].css"
     }),
     new LiveReloadPlugin()
   ]
