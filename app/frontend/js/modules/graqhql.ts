@@ -1,9 +1,9 @@
-import { axios } from "../lib/axios";
+import { axios } from '../lib/axios';
 import { GirlModel } from '../lib/interface/model';
-import { AxiosResponse } from "axios";
-import { query } from "gql-query-builder";
-import { ResponseInterface } from "../lib/interface/response";
-import { buildGraphqlUrl } from "../lib/utils/url_builder";
+import { AxiosResponse } from 'axios';
+import { query } from 'gql-query-builder';
+import { ResponseInterface } from '../lib/interface/response';
+import { buildGraphqlUrl } from '../lib/utils/url_builder';
 
 type queryObj = {
   operation: string;
@@ -16,8 +16,6 @@ export interface GirlsInterface extends ResponseInterface {
   };
 }
 
-export const graphqlQuery = async (
-  args: queryObj
-): Promise<AxiosResponse<GirlsInterface>> => {
+export const graphqlQuery = async (args: queryObj): Promise<AxiosResponse<GirlsInterface>> => {
   return axios().post(buildGraphqlUrl(), query(args));
 };

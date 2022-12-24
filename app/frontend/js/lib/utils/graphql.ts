@@ -12,8 +12,8 @@ type queryObj = {
 
 export interface GirlsInterface extends ResponseInterface {
   data: {
-    girls: GirlModel[]
-  }
+    girls: GirlModel[];
+  };
 }
 
 export const graphqlQuery = async (args: queryObj): Promise<AxiosResponse<GirlsInterface>> => {

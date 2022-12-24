@@ -10,10 +10,10 @@ const Detail: React.FC = () => {
   const fetchGirl = React.useCallback(async (): Promise<void> => {
     const res = await fetchOneGirl(id);
     setGirl(res.data.payload.girl);
-  },[id])
+  }, [id]);
 
   React.useEffect(() => {
-    fetchGirl();
+    void fetchGirl();
   }, [fetchGirl]);
 
   return (

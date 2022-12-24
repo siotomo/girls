@@ -6,12 +6,10 @@ import { buildGirlUrl } from '../lib/utils/url_builder';
 
 interface GirlInterface extends ResponseInterface {
   payload: {
-    girl: GirlModel
-  }
+    girl: GirlModel;
+  };
 }
 
-export const fetchOneGirl = async (
-  id: string
-): Promise<AxiosResponse<GirlInterface>> => {
+export const fetchOneGirl = async (id: string): Promise<AxiosResponse<GirlInterface>> => {
   return axios().get(buildGirlUrl(id));
 };
