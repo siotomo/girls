@@ -1,24 +1,18 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { graphqlQuery } from '../../lib/graphql';
-
-type Girl = {
-  id: number;
-  name: string;
-  age: number;
-  score: number;
-};
+import { graphqlQuery } from '../../lib/utils/graphql';
+import { GirlModel } from '../../lib/interface/model';
 
 const List: React.FC = () => {
-  const [girls, setGirls] = React.useState<Girl[]>([]);
+  const [girls, setGirls] = React.useState<GirlModel[]>([]);
 
   const fetchGirls = React.useCallback(async () => {
     const queryObj = {
       operation: 'girls',
       fields: ['id', 'name', 'age'],
     };
-    const data = await graphqlQuery(queryObj);
-    setGirls(data.girls);
+    const res = await graphqlQuery(queryObj);
+    setGirls(res.data.data.girls);
   }, []);
 
   React.useEffect(() => {
@@ -29,7 +23,7 @@ const List: React.FC = () => {
     <>
       {!!girls.length &&
         girls.map((girl) => (
-          <Link to={`/api/girls/${girl.id}`} key={girl.id}>
+          <Link to={`/girls/${girl.id}`} key={girl.id}>
             <p>
               age: {girl.age} name: {girl.name}
             </p>

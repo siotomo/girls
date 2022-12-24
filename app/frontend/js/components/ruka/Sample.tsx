@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { graphqlQuery } from '../../lib/graphql';
+import { graphqlQuery } from '../../lib/utils/ruka/graphql';
 
 type Girl = {
   id: number;
@@ -17,7 +17,7 @@ const Sample: React.FC = () => {
       fields: ['id', 'name', 'age'],
     };
     const data = await graphqlQuery(queryObj);
-    setGirls(data.girls);
+    setGirls(data.data.data.girls);
   }, []);
 
   const fetchGirl = React.useCallback(async () => {
@@ -26,7 +26,7 @@ const Sample: React.FC = () => {
       fields: ['id', 'name', 'age'],
     };
     const data = await graphqlQuery(queryObj);
-    setGirl(data.girls[0]);
+    setGirl(data.data.data.girls[0]);
   }, []);
 
   React.useEffect(() => {
