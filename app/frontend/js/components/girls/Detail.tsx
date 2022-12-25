@@ -1,23 +1,16 @@
 import * as React from 'react';
-import { AxiosResponse } from 'axios';
 import { useParams } from 'react-router-dom';
-import { axios } from '../../lib/axios';
-
-type Girl = {
-  id: number;
-  name: string;
-  age: number;
-  score: number;
-};
+import { girlDetail } from '../../modules/girls';
+import { GirlModel } from '../../lib/interface/model';
 
 const Detail: React.FC = () => {
-  const [girl, setGirl] = React.useState<Girl>();
+  const [girl, setGirl] = React.useState<GirlModel>();
   const { id } = useParams<{ id: string }>();
 
   const fetchGirl = React.useCallback(async (): Promise<void> => {
-    const data: AxiosResponse<Girl> = await axios().get(`/api/girls/${id}`)
-    setGirl(data.data)
-  },[id])
+    const res = await girlDetail(id);
+    setGirl(res.data.payload.girl);
+  }, [id]);
 
   React.useEffect(() => {
     void fetchGirl();
