@@ -2,7 +2,6 @@ const path = require("path");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const LiveReloadPlugin = require("webpack-livereload-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const Dotenv = require('dotenv-webpack');
 
 const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === "production";
@@ -56,7 +55,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]-[hash].css"
     }),
-    new LiveReloadPlugin(),
-    new Dotenv()
+    new LiveReloadPlugin()
   ]
 }
