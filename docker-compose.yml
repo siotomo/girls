@@ -1,14 +1,15 @@
 version: '3'
 services:
-  rails:
-      build:
-        context: .
-        dockerfile: Dockerfile.rails
-      tty: true
-      stdin_open: true
-      volumes:
-        - .:/var/www/girls
-      working_dir: /var/www/girls
-      # command: bundle exec foreman start
-      ports:
-        - '5001:3000'
+  db:
+    image: mysql:5.7
+    platform: linux/x86_64
+    command: mysqld --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: girls_development
+      TZ: "Asia/Tokyo"
+    ports:
+    - '7303:3306'
+    volumes:
+    - ./docker/config/my.cnf:/etc/mysql/conf.d/my.cnf
+    - './docker/storage/db:/var/lib/mysql'
