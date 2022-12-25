@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { graphqlQuery } from '../../lib/utils/ruka/graphql';
+import { graphqlQuery } from '../../modules/ruka/graphql';
 
 type Girl = {
   id: number;

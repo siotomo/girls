@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { graphqlQuery } from '../../lib/utils/graphql';
+import { graphqlQuery } from '../../modules/graqhql';
 import { GirlModel } from '../../lib/interface/model';
 
 const List: React.FC = () => {

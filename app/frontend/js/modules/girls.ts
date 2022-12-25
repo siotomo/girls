@@ -10,6 +10,16 @@ interface GirlInterface extends ResponseInterface {
   };
 }
 
+export interface GirlsInterface extends ResponseInterface {
+  data: {
+    girls: GirlModel[];
+  };
+}
+
 export const fetchOneGirl = async (id: string): Promise<AxiosResponse<GirlInterface>> => {
+  return axios().get(buildGirlUrl(id));
+};
+
+export const fetchGirl = async (id: string): Promise<AxiosResponse<GirlsInterface>> => {
   return axios().get(buildGirlUrl(id));
 };

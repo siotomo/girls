@@ -1,9 +1,9 @@
 import { query } from 'gql-query-builder';
-import { axios } from '../axios';
-import { ResponseInterface } from '../interface/response';
+import { axios } from '../../lib/axios';
+import { ResponseInterface } from '../../lib/interface/response';
 import { AxiosResponse } from 'axios';
-import { GirlModel } from '../interface/model';
-import { buildGraphqlUrl } from './url_builder';
+import { GirlModel } from '../../lib/interface/model';
+import { buildGraphqlUrl } from '../../lib/utils/url_builder';
 
 type queryObj = {
   operation: string;
