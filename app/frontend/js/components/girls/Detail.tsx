@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { AxiosResponse } from 'axios';
 import { useParams } from 'react-router-dom';
 import { fetchOneGirl } from '../../modules/girls';
 import { GirlModel } from '../../lib/interface/model';
