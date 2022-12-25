@@ -34,7 +34,6 @@ group :development do
   gem 'debase'
   gem 'foreman'
   gem 'ruby-debug-ide'
-  gem 'foreman'
   # rubocop
   gem 'code-scanning-rubocop', '~> 0.6.1'
   gem 'rubocop', '~> 1.22', require: false
