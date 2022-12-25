@@ -13,3 +13,19 @@ services:
     volumes:
     - ./docker/config/my.cnf:/etc/mysql/conf.d/my.cnf
     - './docker/storage/db:/var/lib/mysql'
+  rails:
+      build:
+        context: .
+        dockerfile: Dockerfile.rails
+      tty: true
+      stdin_open: true
+      volumes:
+        - .:/girls
+      working_dir: /girls
+      # command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+      command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec foreman start"
+      ports:
+        - '3000:3000'
+      depends_on:
+        - db
+        
