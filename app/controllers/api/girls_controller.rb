@@ -11,7 +11,7 @@ module Api
     def show
       girl = Girl.find(params[:id])
 
-      render json: { payload: { girl: girl } } 
+      render json: { payload: { girl: girl } }
     end
   end
 end

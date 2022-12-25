@@ -1,7 +1,7 @@
-export const buildGraphqlUrl = (): string => {
-  return '/graphql';
+export const buildGraphqlApiUrl = (): string => {
+  return '/api/graphql';
 };
 
-export const buildGirlUrl = (path: string): string => {
+export const buildGirlApiUrl = (path: string): string => {
   return `/api/girls/${path}`;
 };

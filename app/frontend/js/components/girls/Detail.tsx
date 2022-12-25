@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchOneGirl } from '../../modules/girls';
+import { girlDetail } from '../../modules/girls';
 import { GirlModel } from '../../lib/interface/model';
 
 const Detail: React.FC = () => {
@@ -8,7 +8,7 @@ const Detail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const fetchGirl = React.useCallback(async (): Promise<void> => {
-    const res = await fetchOneGirl(id);
+    const res = await girlDetail(id);
     setGirl(res.data.payload.girl);
   }, [id]);
 
