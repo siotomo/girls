@@ -11,7 +11,6 @@ module.exports = {
   devtool: isProd ? false : "source-map",
   entry: {
     'application': path.resolve(__dirname, "app/frontend/js/packs/application.tsx"),
-    'ruka': path.resolve(__dirname, "app/frontend/js/packs/ruka.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),

@@ -11,8 +11,4 @@ Rails.application.routes.draw do
 
   get 'girls', to: 'girls#index'
   get 'girls/*path', to: 'girls#index'
-
-  # For shiomi's test
-  get 'ruka', to: 'ruka#index'
-  get 'ruka/*path', to: 'ruka#index'
 end
