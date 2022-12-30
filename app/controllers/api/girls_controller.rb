@@ -5,13 +5,13 @@ module Api
     def index
       girls = Girl.all
 
-      render json: girls
+      render json: { payload: { girls: girls } }
     end
 
     def show
       girl = Girl.find(params[:id])
 
-      render json: girl
+      render json: { payload: { girl: girl } }
     end
   end
 end
