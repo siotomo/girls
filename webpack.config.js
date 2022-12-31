@@ -1,6 +1,6 @@
 const path = require("path");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
-// const LiveReloadPlugin = require("webpack-livereload-plugin");
+const LiveReloadPlugin = require("webpack-livereload-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const { NODE_ENV } = process.env;
@@ -54,6 +54,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]-[hash].css"
     }),
-    // new LiveReloadPlugin()
+    new LiveReloadPlugin(
+      // {
+      // appendScriptTag: true,
+      // }
+    ),
   ]
 }
