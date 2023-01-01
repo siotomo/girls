@@ -5,9 +5,21 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-const CardComponent: React.FC = () => {
+type Props = {
+  girl: Girl;
+}
+type Girl = {
+  id: number;
+  name: string;
+  age: number;
+  score: number;
+};
+
+const CardComponent: React.FC<Props> = ({
+  girl
+}) => {
   return (
-    <Card sx={{ maxWidth: 300 }} style={{margin: '10px'}}>
+    <Card sx={{ maxWidth: 350 }} style={{margin: '10px'}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -17,11 +29,13 @@ const CardComponent: React.FC = () => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            12/28日入店
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {girl.name}({girl.age})
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            T157・85(D)・56・85
           </Typography>
         </CardContent>
       </CardActionArea>

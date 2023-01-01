@@ -4,8 +4,31 @@ import TabsComponent from './Tabs';
 import ButtonComponent from './Button';
 import SquareButtonComponent from './SquareButton';
 import SearchComponent from './Search';
+import { Link } from 'react-router-dom';
+import { graphqlQuery } from '../../lib/graphql';
+
+type Girl = {
+  id: number;
+  name: string;
+  age: number;
+  score: number;
+};
 
 const List: React.FC = () => {
+  const [girls, setGirls] = React.useState<Girl[]>([]);
+
+  const fetchGirls = React.useCallback(async () => {
+    const queryObj = {
+      operation: 'girls',
+      fields: ['id', 'name', 'age'],
+    };
+    const data = await graphqlQuery(queryObj);
+    setGirls(data.girls);
+  }, []);
+
+  React.useEffect(() => {
+    void fetchGirls();
+  }, [fetchGirls]);
 
   return (
     <>
@@ -15,7 +38,7 @@ const List: React.FC = () => {
       }}>
         {/* search-area */}
         <div style={{
-          height: '440px',
+          height: '400px',
           boxSizing: 'border-box',
           left: '0%',
           right: '0%',
@@ -72,11 +95,15 @@ const List: React.FC = () => {
           flexWrap: 'wrap',
           justifyContent: 'center',
           margin: 'auto',
-          width: '80%',
+          width: '1050px',
           marginTop: '30px',
         }}>
-          {[1, 2, 3, 4, 5, 6].map(() => {
-            return <CardComponent />
+          {!!girls.length && girls.map((girl) => {
+            return (
+              <Link style={{width: '300px'}} to={`/girls/${girl.id}`} key={girl.id}>
+                <CardComponent girl={girl} />
+              </Link>
+            )
           })}
         </div>
       </div>
