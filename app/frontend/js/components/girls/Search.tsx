@@ -15,6 +15,7 @@ const SearchComponent: React.FC<Props> = ({
   return (
     <Paper
       component="form"
+      style={{width: '420px'}}
       sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
     >
       <IconButton sx={{ p: '10px' }} aria-label="menu">

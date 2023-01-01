@@ -15,7 +15,7 @@ const List: React.FC = () => {
       }}>
         {/* search-area */}
         <div style={{
-          height: '300px',
+          height: '440px',
           boxSizing: 'border-box',
           left: '0%',
           right: '0%',
@@ -24,6 +24,31 @@ const List: React.FC = () => {
           background: '#16213E',
           border: '1px solid #16213E',
         }}>
+          <div style={{
+            margin: 'auto',
+            width: '70%',
+            marginTop: '50px',
+          }}>
+            <TabsComponent />
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end'
+            }}>
+              <div style={{
+                marginTop: '50px',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '220px',
+                justifyContent: 'space-between'
+              }}>
+                <ButtonComponent text={'出勤日で検索する'} />
+                <ButtonComponent text={'条件で検索する'} />
+                <SearchComponent text={'条件で検索する'} />
+              </div>
+              <SquareButtonComponent text={'並び替え: 新着順'} />
+            </div>
+          </div>
           {/* Tabs */}
           {/* <Tabs
             indicatorColor="primary"
@@ -39,11 +64,6 @@ const List: React.FC = () => {
               disableRipple
             />
           </Tabs> */}
-          <TabsComponent />
-          <ButtonComponent text={'出勤日で検索する'} />
-          <ButtonComponent text={'条件で検索する'} />
-          <SearchComponent text={'条件で検索する'} />
-          <SquareButtonComponent text={'並び替え: 新着順'} />
         </div>
 
         {/* search-result-area */}
@@ -52,7 +72,7 @@ const List: React.FC = () => {
           flexWrap: 'wrap',
           justifyContent: 'center',
           margin: 'auto',
-          width: '70%',
+          width: '80%',
           marginTop: '30px',
         }}>
           {[1, 2, 3, 4, 5, 6].map(() => {
