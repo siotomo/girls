@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
+
 import { graphqlQuery } from '../../lib/graphql';
 import { axios } from '../../lib/axios';
 
@@ -91,19 +92,19 @@ const moves: GirlMoves[] = [
 ]
 
 const Detail: React.FC = () => {
-  const [girl, setGirl] = React.useState<Girl>();
+  const [girl, setGirl] = React.useState<GirlModel>();
   const { id } = useParams<{ id: string }>();
 
   const fetchGirl = React.useCallback(async (): Promise<void> => {
-    const data = await axios().get(`/api/girls/${id}`)
-    setGirl(data.data)
-  },[id])
+    const res = await girlDetail(id);
+    setGirl(res.data.payload.girl);
+  }, [id]);
 
   // 画像の切り替え
   const [mainImage, setMainImage] = React.useState<string>(images[0].url);
 
   React.useEffect(() => {
-    fetchGirl();
+    void fetchGirl();
   }, [fetchGirl]);
 
   return (

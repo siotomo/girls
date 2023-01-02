@@ -1,24 +1,18 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { graphqlQuery } from '../../lib/graphql';
-
-type Girl = {
-  id: number;
-  name: string;
-  age: number;
-  score: number;
-};
+import { graphqlQuery } from '../../modules/graqhql';
+import { GirlModel } from '../../lib/interface/model';
 
 const List: React.FC = () => {
-  const [girls, setGirls] = React.useState<Girl[]>([]);
+  const [girls, setGirls] = React.useState<GirlModel[]>([]);
 
   const fetchGirls = React.useCallback(async () => {
     const queryObj = {
       operation: 'girls',
       fields: ['id', 'name', 'age'],
     };
-    const data = await graphqlQuery(queryObj);
-    setGirls(data.girls);
+    const res = await graphqlQuery(queryObj);
+    setGirls(res.data.data.girls);
   }, []);
 
   React.useEffect(() => {
