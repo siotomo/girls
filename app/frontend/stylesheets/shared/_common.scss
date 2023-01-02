@@ -7,6 +7,8 @@ body{
   width:100%;
   -webkit-font-smoothing:antialiased;
   background:#f4fbfc;
+  margin: 0;
+  padding: 0;
   @include g.sp() {
     font-size:14px;
   }

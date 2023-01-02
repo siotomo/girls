@@ -1,0 +1,18 @@
+@use '../global/variables' as variables;
+
+.heroheader {
+  background: variables.$main-color;
+  color: variables.$base-color;
+}
+
+.imagesample {
+  width: 300px;
+  height: 200px;
+  margin-left: auto;
+  border-radius: 10px;
+  background: #d9d9d9;
+}
+
+.score {
+  font-size: 20px;
+}
