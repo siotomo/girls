@@ -19,7 +19,7 @@ const CardComponent: React.FC<Props> = ({
   girl
 }) => {
   return (
-    <Card sx={{ maxWidth: 350 }} style={{margin: '10px'}}>
+    <Card sx={{ maxWidth: 350 }} className='m-margin10px'>
       <CardActionArea>
         <CardMedia
           component="img"

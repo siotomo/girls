@@ -5,7 +5,7 @@ type Props = {
   text: string;
 }
 
-const SquareButtonComponent: React.FC<Props> = ({
+const SquareButton: React.FC<Props> = ({
   text
 }) => {
   return (
@@ -15,4 +15,4 @@ const SquareButtonComponent: React.FC<Props> = ({
   );
 }
 
-export default SquareButtonComponent;
+export default SquareButton;

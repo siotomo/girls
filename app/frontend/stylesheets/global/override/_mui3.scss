@@ -1,22 +1,18 @@
-@use 'variables';
+@use '../variables';
 
-.MuiAppBar-root {
-  background: variables.$base-color;
-  color: variables.$main-color;
-}
-
+// ---Tabs---
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
   color: variables.$base-color;
 }
-
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
   color: variables.$base-color;
 }
-
 .css-1aquho2-MuiTabs-indicator {
   background-color: variables.$base-color;
   height: 3px !important;
 }
+// ---Tabs---
+
 
 .css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
   background: variables.$main-color;

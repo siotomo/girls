@@ -9,13 +9,13 @@ type Props = {
   text: string;
 }
 
-const SearchComponent: React.FC<Props> = ({
+const SearchInputButton: React.FC<Props> = ({
   text
 }) => {
   return (
     <Paper
       component="form"
-      style={{width: '420px'}}
+      className='m-width420px'
       sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
     >
       <IconButton sx={{ p: '10px' }} aria-label="menu">
@@ -23,8 +23,8 @@ const SearchComponent: React.FC<Props> = ({
       </IconButton>
       <InputBase
         sx={{ ml: 1, flex: 1 }}
-        placeholder="キーワードで検索する"
-        inputProps={{ 'aria-label': 'キーワードで検索する' }}
+        placeholder={text}
+        inputProps={{ 'aria-label': text }}
       />
       <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />
@@ -33,4 +33,4 @@ const SearchComponent: React.FC<Props> = ({
   );
 }
 
-export default SearchComponent;
+export default SearchInputButton;

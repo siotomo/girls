@@ -5,7 +5,7 @@ type Props = {
   text: string;
 }
 
-const ButtonComponent: React.FC<Props> = ({
+const SearchConditionButton: React.FC<Props> = ({
   text
 }) => {
   return (
@@ -15,4 +15,4 @@ const ButtonComponent: React.FC<Props> = ({
   );
 }
 
-export default ButtonComponent;
+export default SearchConditionButton;
