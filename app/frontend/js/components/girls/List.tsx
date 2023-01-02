@@ -32,12 +32,12 @@ const List: React.FC = () => {
 
   return (
     <>
-      <div className='list_wrapper'>
-        <div className='list_search_area'>
-          <div className='list_search_area--condition_area'>
+      <div className="list_wrapper">
+        <div className="list_search_area">
+          <div className="list_search_area--condition_area">
             <TabsComponent />
-            <div className='list_search_area--condition_area--wrapper'>
-              <div className='list_search_area--condition_area--wrapper--buttons'>
+            <div className="list_search_area--condition_area--wrapper">
+              <div className="list_search_area--condition_area--wrapper--buttons">
                 <SearchConditionButton text={'出勤日で検索する'} />
                 <SearchConditionButton text={'条件で検索する'} />
                 <SearchInputButton text={'条件で検索する'} />
@@ -47,14 +47,15 @@ const List: React.FC = () => {
           </div>
         </div>
 
-        <div className='list_search_result_area'>
-          {!!girls.length && girls.map((girl) => {
-            return (
-              <Link className='m-width300px' to={`/girls/${girl.id}`} key={girl.id}>
-                <SearchResultCard girl={girl} />
-              </Link>
-            )
-          })}
+        <div className="list_search_result_area">
+          {!!girls.length &&
+            girls.map((girl) => {
+              return (
+                <Link className="m-width300px" to={`/girls/${girl.id}`} key={girl.id}>
+                  <SearchResultCard girl={girl} />
+                </Link>
+              );
+            })}
         </div>
       </div>
     </>
@@ -62,5 +63,3 @@ const List: React.FC = () => {
 };
 
 export default List;
-
-

@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 
 type Props = {
   girl: Girl;
-}
+};
 type Girl = {
   id: number;
   name: string;
@@ -15,18 +15,11 @@ type Girl = {
   score: number;
 };
 
-const SearchResultCard: React.FC<Props> = ({
-  girl
-}) => {
+const SearchResultCard: React.FC<Props> = ({ girl }) => {
   return (
-    <Card sx={{ maxWidth: 350 }} className='m-margin10px'>
+    <Card sx={{ maxWidth: 350 }} className="m-margin10px">
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/mamekiti.png"
-          alt="green iguana"
-        />
+        <CardMedia component="img" height="140" image="/mamekiti.png" alt="green iguana" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             12/28日入店
@@ -41,6 +34,6 @@ const SearchResultCard: React.FC<Props> = ({
       </CardActionArea>
     </Card>
   );
-}
+};
 
 export default SearchResultCard;

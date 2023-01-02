@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { graphqlQuery } from '../../lib/graphql';
 import { axios } from '../../lib/axios';
 import Grid2 from '@mui/material/Unstable_Grid2';
 
@@ -16,9 +15,9 @@ const Detail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const fetchGirl = React.useCallback(async (): Promise<void> => {
-    const data = await axios().get(`/api/girls/${id}`)
-    setGirl(data.data)
-  },[id])
+    const data = await axios().get(`/api/girls/${id}`);
+    setGirl(data.data);
+  }, [id]);
 
   React.useEffect(() => {
     fetchGirl();
@@ -26,24 +25,24 @@ const Detail: React.FC = () => {
 
   return (
     <>
-      <Grid2 container spacing={2} sx={{ py: 3, mt: 0 }} className='heroheader'>
+      <Grid2 container spacing={2} sx={{ py: 3, mt: 0 }} className="heroheader">
         <Grid2 xs={5} sx={{ textAlign: 'center' }}>
-          <div className='imagesample'></div>
+          <div className="imagesample"></div>
         </Grid2>
         <Grid2 xs={7}>
-          {
-            girl &&
-              <>
-                <div className='h4'>{girl?.name}（{girl?.age}）</div>
-                {
-                  girl?.score &&
-                  <>
-                    <div>スコア</div>
-                    <div className='score'>{girl?.score}</div>
-                  </>
-                }
-              </>
-          }
+          {girl && (
+            <>
+              <div className="h4">
+                {girl?.name}（{girl?.age}）
+              </div>
+              {girl?.score && (
+                <>
+                  <div>スコア</div>
+                  <div className="score">{girl?.score}</div>
+                </>
+              )}
+            </>
+          )}
         </Grid2>
       </Grid2>
     </>
