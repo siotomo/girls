@@ -35,7 +35,7 @@
 }
 .css-1vm0r4s-MuiPaper-root {
   background-color: variables.$main-color;
-  border: 1px solid #fff !important;
+  border: 1px solid variables.$base-color !important;
   border-radius: 100px !important;
   width: 430px;
   height: 56px;
@@ -43,7 +43,7 @@
 
 .css-zddlty-MuiButtonBase-root-MuiButton-root {
   background-color: variables.$main-color;
-  border: 1px solid #fff !important;
+  border: 1px solid variables.$base-color !important;
   width: 250px;
   height: 56px;
 }
