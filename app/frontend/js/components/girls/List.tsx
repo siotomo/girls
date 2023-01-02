@@ -1,7 +1,7 @@
 import * as React from 'react';
-import CardComponent from './Card';
+import SearchResultCard from './SearchResultCard';
 import TabsComponent from './Tabs';
-import SearchConditionButton from './Button';
+import SearchConditionButton from './SearchConditionButton';
 import SquareButton from './SquareButton';
 import SearchInputButton from './SearchInput';
 import { Link } from 'react-router-dom';
@@ -51,7 +51,7 @@ const List: React.FC = () => {
           {!!girls.length && girls.map((girl) => {
             return (
               <Link className='m-width300px' to={`/girls/${girl.id}`} key={girl.id}>
-                <CardComponent girl={girl} />
+                <SearchResultCard girl={girl} />
               </Link>
             )
           })}

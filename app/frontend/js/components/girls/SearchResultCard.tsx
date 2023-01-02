@@ -15,7 +15,7 @@ type Girl = {
   score: number;
 };
 
-const CardComponent: React.FC<Props> = ({
+const SearchResultCard: React.FC<Props> = ({
   girl
 }) => {
   return (
@@ -43,4 +43,4 @@ const CardComponent: React.FC<Props> = ({
   );
 }
 
-export default CardComponent;
+export default SearchResultCard;
