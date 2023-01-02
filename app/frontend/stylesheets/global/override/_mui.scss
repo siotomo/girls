@@ -1,0 +1,49 @@
+@use '../variables';
+
+.MuiAppBar-root {
+  background: variables.$base-color;
+  color: variables.$main-color;
+}
+
+// ---Tabs---
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  color: variables.$base-color;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: variables.$base-color;
+}
+.css-1aquho2-MuiTabs-indicator {
+  background-color: variables.$base-color;
+  height: 3px !important;
+}
+// ---Tabs---
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
+  background: variables.$main-color;
+  border: 1px solid variables.$base-color;
+  border-radius: 100px !important;
+  color: variables.$base-color;
+  width: 430px;
+  height: 56px;
+}
+
+// search input
+.css-1gtpq4r-MuiButtonBase-root-MuiIconButton-root {
+  background-color: variables.$base-color;
+}
+.css-piqts5-MuiInputBase-root {
+  color: variables.$base-color;
+}
+.css-1vm0r4s-MuiPaper-root {
+  background-color: variables.$main-color;
+  border: 1px solid #fff !important;
+  border-radius: 100px !important;
+  width: 430px;
+  height: 56px;
+}
+
+.css-zddlty-MuiButtonBase-root-MuiButton-root {
+  background-color: variables.$main-color;
+  border: 1px solid #fff !important;
+  width: 250px;
+  height: 56px;
+}
