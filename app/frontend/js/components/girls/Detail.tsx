@@ -1,26 +1,20 @@
 import * as React from 'react';
-import { useParams } from 'react-router-dom';
-import { axios } from '../../lib/axios';
 import Grid2 from '@mui/material/Unstable_Grid2';
-
-type Girl = {
-  id: number;
-  name: string;
-  age: number;
-  score: number;
-};
+import { useParams } from 'react-router-dom';
+import { girlDetail } from '../../modules/girls';
+import { GirlModel } from '../../lib/interface/model';
 
 const Detail: React.FC = () => {
-  const [girl, setGirl] = React.useState<Girl>();
+  const [girl, setGirl] = React.useState<GirlModel>();
   const { id } = useParams<{ id: string }>();
 
   const fetchGirl = React.useCallback(async (): Promise<void> => {
-    const data = await axios().get(`/api/girls/${id}`);
-    setGirl(data.data);
+    const res = await girlDetail(id);
+    setGirl(res.data.payload.girl);
   }, [id]);
 
   React.useEffect(() => {
-    fetchGirl();
+    void fetchGirl();
   }, [fetchGirl]);
 
   return (

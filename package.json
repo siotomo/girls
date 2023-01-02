@@ -3,7 +3,7 @@
     "start": "webpack --progress --mode=development --watch",
     "lint": "eslint --color \"app/frontend/js/\" --ext .ts,.tsx",
     "lint:fix": "prettier \"app/frontend/js/\" --write && eslint --color \"app/frontend/js/\" --ext .ts,.tsx --fix",
-    "lint_only_diff_files": "prettier $(git diff --name-only --diff-filter=dr master | grep -E \"(.js$|.ts$|.tsx$)\") --write && eslint --color $(git diff --name-only --diff-filter=dr master | grep -E \"(.js$|.ts$|.tsx$)\")"
+    "lint_only_diff_files": "prettier $(git diff --name-only --diff-filter=dr master | grep -E \"(.ts$|.tsx$)\") --write && eslint --color $(git diff --name-only --diff-filter=dr master | grep -E \"(.ts$|.tsx$)\")"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
