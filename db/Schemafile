@@ -8,6 +8,7 @@ create_table "girls", id: :bigint, force: :cascade, charset: 'utf8mb4' do |t|
   t.integer "hip"
   t.integer "age"
   t.integer "score"
+  t.text "description"
   t.integer "store_id", null: false
   t.integer "city_heven_id", null: false
   t.index ["store_id"], name: "index_girls_on_store_id"
