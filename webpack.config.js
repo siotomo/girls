@@ -54,10 +54,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]-[hash].css"
     }),
-    new LiveReloadPlugin(
-      {
-      appendScriptTag: true,
-      }
-    ),
+    // new LiveReloadPlugin(
+    //   {
+    //   appendScriptTag: true,
+    //   }
+    // ),
   ]
 }
