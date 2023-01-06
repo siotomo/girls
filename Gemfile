@@ -40,5 +40,4 @@ group :development do
   gem 'rubocop-rails', '~> 2.12', require: false
 end
 
-gem 'simpacker'
-gem 'rmagick' # 画像加工(リサイズなど)
+gem 'rmagick' # 画像加工(リサイズなど)gem 'simpacker'
