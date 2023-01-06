@@ -55,9 +55,9 @@ module.exports = {
       filename: "[name]-[hash].css"
     }),
     new LiveReloadPlugin(
-      // {
-      // appendScriptTag: true,
-      // }
+      {
+      appendScriptTag: true,
+      }
     ),
   ]
 }
