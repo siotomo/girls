@@ -42,5 +42,5 @@ group :development do
   gem 'rubocop-rails', '~> 2.12', require: false
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'simpacker'
+gem 'rmagick' # 画像加工(リサイズなど)
