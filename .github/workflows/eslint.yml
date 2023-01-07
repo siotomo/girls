@@ -1,0 +1,14 @@
+name: ESLint
+on: [push]
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout to the branch
+        uses: actions/checkout@v3
+      - name: exec eslint
+        uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-check
+          eslint_flags: app/frontend/js/
+          fail_on_error: true
