@@ -2,26 +2,24 @@
 
 class Scraping::Girl
   def initialize(url)
-    @girl_show_html = Nokogiri::HTML.parse(URI.parse("https://www.cityheaven.net/tokyo/A1316/A131603/ultra-galaxy/A6ShopReservation/?girl_id=30734198").read)
-    url = URI.parse("https://www.cityheaven.net#{@girl_show_html.css("#shopmain div.contents_info")[0].children[1].attributes["src"].value}")
-    html = Nokogiri::HTML.parse(url)
-    binding.pry
+    girl_id = "30734198"
+    @shift = Scraping::Shift.new(girl_id)
   end
 
   def scrape
     {
-      name: name,
-      age: age,
-      height: height,
-      bra_size: bra_size,
-      waist_size: waist_size,
-      description: description,
-      # 個性
-      personalities: personalities,
-      # 性格
-      character: character,
-      shifts: shifts,
-      images: images
+      # name: name,
+      # age: age,
+      # height: height,
+      # bra_size: bra_size,
+      # waist_size: waist_size,
+      # description: description,
+      # # 個性
+      # personalities: personalities,
+      # # 性格
+      # character: character,
+      shifts: @shift.exec,
+      # images: images
     }
   end
 
