@@ -1,12 +1,12 @@
 import * as React from 'react';
-import SearchResultCard from './SearchResultCard';
-import SearchTabs from './SearchTabs';
-import SearchConditionButton from './SearchConditionButton';
-import SquareButton from './SquareButton';
-import SearchInputButton from './SearchInput';
-import { Link } from 'react-router-dom';
-import { graphqlQuery } from '../../modules/graqhql';
-import { GirlModel } from '../../lib/interface/model';
+import SearchResultCard from '../components/girls/index/SearchResultCard';
+import SearchTabs from '../components/girls/index/SearchTabs';
+import SearchConditionButton from '../components/girls/index/SearchConditionButton';
+import SquareButton from '../components/girls/index/SquareButton';
+import SearchInputButton from '../components/girls/index/SearchInput';
+import { graphqlQuery } from '../modules/graqhql';
+import { GirlModel } from '../lib/interface/model';
+
 
 const List: React.FC = () => {
   const [girls, setGirls] = React.useState<GirlModel[]>([]);
