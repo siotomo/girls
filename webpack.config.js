@@ -3,7 +3,7 @@ const WebpackAssetsManifest = require("webpack-assets-manifest");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const { NODE_ENV } = process.env;
-const isProd = NODE_ENV === "production";
+const isProd = NODE_ENV === 'production';
 
 module.exports = {
   mode: isProd ? "production" : "development",
@@ -12,10 +12,11 @@ module.exports = {
     'application': path.resolve(__dirname, "app/frontend/js/packs/application.tsx"),
   },
   output: {
-    path: path.resolve(__dirname, "public/packs"),
-    publicPath: "/packs/",
-    filename: "[name]-[hash].js",
+    path: path.resolve(__dirname, 'public/packs'),
+    publicPath: '/packs/',
+    filename: '[name]-[hash].js',
   },
+
   resolve: {
     extensions: ['.ts', '.js', '.tsx'],
   },
@@ -24,10 +25,7 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: [
-          {loader: 'babel-loader'},
-          {loader: 'ts-loader'},
-        ]
+        use: [{ loader: 'babel-loader' }, { loader: 'ts-loader' }],
       },
       {
         test: /\.(css|scss)$/,
@@ -48,7 +46,7 @@ module.exports = {
   plugins: [
     new WebpackAssetsManifest({
       publicPath: true,
-      output: "manifest.json",
+      output: 'manifest.json',
     }),
     new MiniCssExtractPlugin({
       filename: "[name]-[hash].css"
