@@ -41,14 +41,13 @@ const List: React.FC = () => {
       </div>
 
       <div className="list_search_result_area">
-        {!!girls.length &&
-          girls.map((girl) => {
-            return (
-              <Link className="m-width300px" to={`/girls/${girl.id}`} key={girl.id}>
-                <SearchResultCard girl={girl} />
-              </Link>
-            );
-          })}
+        {
+          !!girls.length && (
+            girls.map((girl) => (
+              <SearchResultCard girl={girl} key={girl.id}/>
+            ))
+          )
+        }
       </div>
     </div>
   );
