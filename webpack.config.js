@@ -1,7 +1,6 @@
-const path = require('path');
-const WebpackAssetsManifest = require('webpack-assets-manifest');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const WebpackAssetsManifest = require("webpack-assets-manifest");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === 'production';
@@ -10,8 +9,7 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: isProd ? false : "source-map",
   entry: {
-    application: path.resolve(__dirname, 'app/frontend/js/packs/application.tsx'),
-    ruka: path.resolve(__dirname, 'app/frontend/js/packs/ruka.tsx'),
+    'application': path.resolve(__dirname, "app/frontend/js/packs/application.tsx"),
   },
   output: {
     path: path.resolve(__dirname, 'public/packs'),
@@ -53,6 +51,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]-[hash].css"
     }),
-    new LiveReloadPlugin(),
-  ],
-};
+  ]
+}

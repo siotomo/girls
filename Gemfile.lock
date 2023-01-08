@@ -96,6 +96,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitest (5.16.3)
+    mysql2 (0.5.4)
     nio4r (2.5.8)
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
@@ -103,6 +104,7 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
+    pkg-config (1.5.1)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -145,6 +147,8 @@ GEM
     ridgepole (1.2.0)
       activerecord (>= 5.1, < 7.1)
       diffy
+    rmagick (5.1.0)
+      pkg-config (~> 1.4)
     rubocop (1.37.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -164,16 +168,6 @@ GEM
     ruby-debug-ide (0.7.3)
       rake (>= 0.8.1)
     ruby-progressbar (1.11.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     simpacker (1.2.1)
       railties (>= 4.2)
     sprockets (4.1.1)
@@ -183,10 +177,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.3)
-      mini_portile2 (~> 2.8.0)
     thor (1.2.1)
-    tilt (2.0.11)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.3.0)
@@ -206,16 +197,15 @@ DEPENDENCIES
   graphiql-rails
   graphql
   listen (~> 3.3)
+  mysql2 (>= 0.4.4)
   puma (~> 5.0)
   rails (~> 6.1.5)
   ridgepole
+  rmagick
   rubocop (~> 1.22)
   rubocop-rails (~> 2.12)
   ruby-debug-ide
-  sass-rails (>= 6)
   simpacker
-  sqlite3 (~> 1.4)
-  tzinfo-data
 
 RUBY VERSION
    ruby 2.7.5p203

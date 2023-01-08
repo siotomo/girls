@@ -11,8 +11,5 @@
   <body>
     <%= yield %>
     <%= javascript_pack_tag 'application' %>
-    <% if Rails.env.development? %>
-      <script src="http://localhost:35729/livereload.js"></script>
-    <% end %>
   </body>
 </html>
