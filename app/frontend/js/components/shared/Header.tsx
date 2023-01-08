@@ -9,7 +9,7 @@ class Header extends React.Component {
   render() {
     return (
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" classes="header">
+        <AppBar position="static">
           <Toolbar variant="dense">
             <Typography variant="h6" color="inherit" component="div">
               Girls
