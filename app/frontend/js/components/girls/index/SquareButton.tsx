@@ -5,12 +5,10 @@ type Props = {
   text: string;
 };
 
-const SquareButton: React.FC<Props> = ({ text }) => {
-  return (
-    <Button variant="contained" disableElevation>
-      {text}
-    </Button>
-  );
-};
+const SquareButton: React.FC<Props> = ({ text }) => (
+  <Button variant="contained" disableElevation>
+    {text}
+  </Button>
+)
 
 export default SquareButton;
