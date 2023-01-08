@@ -1,12 +1,14 @@
 // 共通ベース定義ファイル
 @use "../global/index" as g;
 
-body{
+body {
   font-size:16px;
   color:#0f3232;
   width:100%;
   -webkit-font-smoothing:antialiased;
   background:#f4fbfc;
+  margin: 0;
+  padding: 0;
   @include g.sp() {
     font-size:14px;
   }
