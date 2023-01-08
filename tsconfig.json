@@ -4,12 +4,13 @@
     "module": "ES2015",
     "jsx": "react",
     "strict": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "lib": ["dom"]
   },
   "include": [
     "app/frontend/**/*"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

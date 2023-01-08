@@ -1,1 +1,168 @@
+@charset "utf-8";
+
+.m-margin10px { margin: 10px; }
+.m-width300px { width: 300px; }
+.m-width420px { width: 420px; }
+
+// NOTE: シカポチからコピー && SP実装はシフト機能実装後
+
+// 共通ここから
 .m-font_w_bold { font-weight: bold; }
+.m-font_w_normal { font-weight: normal; }
+.m-font_s_120p { font-size: 120%; }
+.m-font_s_90p { font-size: 90%; }
+.m-font_s_80p { font-size: 80%; }
+.m-font_s_60p { font-size: 60%; }
+.m-text_center { text-align: center; }
+.m-text_left { text-align: left; }
+.m-text_right { text-align: right; }
+.m-line_height120 { line-height: 120%; }
+.m-line_height150 { line-height: 150%; }
+.m-width10p { width: 10%; }
+.m-width15p { width: 15%; }
+.m-width20p { width: 20%; }
+.m-width25p { width: 25%; }
+.m-width30p { width: 30%; }
+.m-width40p { width: 40%; }
+.m-width45p { width: 45%; }
+.m-width50p { width: 50%; }
+.m-width60p { width: 60%; }
+.m-width70p { width: 70%; }
+.m-width80p { width: 80%; }
+.m-width85p { width: 85%; }
+.m-width90p { width: 90%; }
+.m-width100p { width: 100%; }
+.m-mt05 { margin-top: 5px; }
+.m-mt10 { margin-top: 10px; }
+.m-mt15 { margin-top: 15px; }
+.m-mt20 { margin-top: 20px; }
+.m-mt30 { margin-top: 30px; }
+.m-mt50 { margin-top: 50px; }
+.m-mb5 { margin-bottom: 5px; }
+.m-mb05 { margin-bottom: 5px; }
+.m-mb10 { margin-bottom: 10px; }
+.m-mb20 { margin-bottom: 20px; }
+.m-mb30 { margin-bottom: 30px; }
+.m-mb50 { margin-bottom: 50px; }
+.m-mr05 { margin-right: 5px; }
+.m-mr10 { margin-right: 10px; }
+.m-mr20 { margin-right: 20px; }
+.m-mr30 { margin-right: 30px; }
+.m-ml05 { margin-left: 5px; }
+.m-ml10 { margin-left: 10px; }
+.m-ml20 { margin-left: 20px; }
+.m-ml30 { margin-left: 30px; }
+.m-ml40 { margin-left: 40px; }
+.m-mr_auto { margin-right: auto; }
+.m-ml_auto { margin-left: auto; }
+.m-padding5 { padding: 5px; }
+.m-padding10 { padding: 10px; }
+.m-padding15 { padding: 15px; }
+.m-padding20 { padding: 20px; }
+.m-pt5 { padding-top: 5px; }
+.m-pt10 { padding-top: 10px; }
+.m-pt15 { padding-top: 15px; }
+.m-pt20 { padding-top: 20px; }
+.m-pb5 { padding-bottom: 5px; }
+.m-pb10 { padding-bottom: 10px; }
+.m-pb15 { padding-bottom: 15px; }
+.m-pb05 { padding-bottom: 5px; }
+.m-pr05 { padding-right: 5px; }
+.m-pr10 { padding-right: 10px; }
+.m-pr20 { padding-right: 20px; }
+.m-pl05 { padding-left: 5px; }
+.m-pl10 { padding-left: 10px; }
+.m-pl20 { padding-left: 20px; }
+.m-pl30 { padding-left: 30px; }
+.m-pl40 { padding-left: 40px; }
+.m-brdr { border-style: solid; border-width: 1px; }
+.m-brdr_top { border-top-style: solid; border-top-width: 1px; }
+.m-brdr_bottom { border-bottom-style: solid; border-bottom-width: 1px; }
+.m-brdr_left { border-left-style: solid; border-left-width: 1px; }
+.m-brdr_right { border-right-style: solid; border-right-width: 1px; }
+.m-block { display: block; }
+.m-flex { display: flex; }
+.m-inline { display: inline; }
+.m-inline-block { display: inline-block; }
+.m-flex_ai_center { align-items: center; }
+.m-flex_ai_baseline { align-items: baseline; }
+.m-flex_ai_start { align-items: flex-start; }
+.m-flex_ai_end { align-items: flex-end; }
+.m-flex_jc_between { justify-content: space-between; }
+.m-flex_jc_center { justify-content: center; }
+.m-flex_jc_evenly { justify-content: space-evenly; }
+.m-flex_jc_top { justify-content: flex-start; }
+.m-flex_jc_end { justify-content: flex-end; }
+.m-flex_wrap {
+  flex-wrap: wrap;
+  > * {
+    margin-bottom: 10px;
+  }
+}
+.m-flex_direction_row { flex-direction: row; }
+.m-flex_direction_column { flex-direction: column; }
+.m-flex_basis_zero { flex-basis: 0; }
+.m-brdr_radius2p { border-radius: 2px; }
+.m-brdr_radius5p { border-radius: 5px; }
+.m-brdr_radius10p { border-radius: 10px; }
+.m-brdr_radius15p { border-radius: 15px; }
+.m-table_scroll_x { overflow: hidden; overflow-x: scroll; }
+.m-table_scroll_y { overflow: hidden; overflow-y: scroll; }
+.m-table_scroll_x_auto { overflow: hidden; overflow-x: auto; }
+.m-cursor_pointer { cursor: pointer; }
+.m-overflow_hidden { overflow: hidden; }
+.m-nowrap { white-space: nowrap; }
+.m-va-top { vertical-align: top; }
+.m-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+// 共通ここまで
+
+// PCのみここから
+@media screen and (min-width:1025px) {
+  .m-font_w_bold_pc { font-weight: bold; }
+  .m-font_w_normal_pc { font-weight: normal; }
+  .m-font_s_120p_pc { font-size: 120%; }
+  .m-font_s_90p_pc { font-size: 90%; }
+  .m-font_s_80p_pc { font-size: 80%; }
+  .m-text_center_pc { text-align: center; }
+  .m-width10p_pc { width: 10%; }
+  .m-width20p_pc { width: 20%; }
+  .m-width25p_pc { width: 25%; }
+  .m-width30p_pc { width: 30%; }
+  .m-width40p_pc { width: 40%; }
+  .m-width50p_pc { width: 50%; }
+  .m-width60p_pc { width: 60%; }
+  .m-width70p_pc { width: 70%; }
+  .m-width80p_pc { width: 80%; }
+  .m-width90p_pc { width: 90%; }
+  .m-width100p_pc { width: 100%; }
+  .m-width_3em_pc { width: 3em; }
+  .m-width_5em_pc { width: 5em; }
+  .m-width_10em_pc { width: 10em; }
+  .m-ta_height_5em_pc { height: 5em; }
+  .m-ta_height_10em_pc { height: 10em; }
+  .m-mt20_pc { margin-top: 20px; }
+  .m-mt15_pc { margin-top: 15px; }
+  .m-mt10_pc { margin-top: 10px; }
+  .m-mb10_pc { margin-bottom: 10px; }
+  .m-mb05_pc { margin-bottom: 5px; }
+  .m-mr10_pc { margin-right: 10px; }
+  .m-mr20_pc { margin-right: 20px; }
+  .m-ml05_pc { margin-left: 5px; }
+  .m-ml10_pc { margin-left: 10px; }
+  .m-ml20_pc { margin-left: 20px; }
+  .m-flex_pc { display: flex; }
+  .m-flex_ai_center_pc { align-items: center; }
+  .m-flex_jc_between_pc { justify-content: space-between; }
+  .m-flex_jc_center_pc { justify-content: center; }
+  .m-flex_jc_end_pc { justify-content: flex-end;; }
+  .m-flex_wrap_pc { flex-wrap: wrap; }
+  .m-flex_direction_row_pc { flex-direction: row; }
+  .m-flex_direction_column_pc { flex-direction: column; }
+  .m-brdr_radius10p_pc { border-radius: 10px; }
+  .m-brdr_radius15p_pc { border-radius: 15px; }
+}
+// PCのみここまで

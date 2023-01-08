@@ -1,0 +1,46 @@
+@use '../../global//variables';
+
+.list_wrapper {
+  position: 'relative';
+  background: variables.$base-color;
+}
+
+.list_search_area {
+  height: 400px;
+  box-sizing: border-box;
+  left: 0%;
+  right: 0%;
+  top: 12.34%;
+  bottom: 0%;
+  background: variables.$main-color;
+  border: 1px solid variables.$main-color;
+
+  &--condition_area {
+    margin: auto;
+    width: 70%;
+    margin-top: 50px;
+
+    &--wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &--buttons {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        height: 220px;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.list_search_result_area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 1050px;
+  margin-top: 30px;
+}

@@ -32,3 +32,6 @@ vendor
 node_modules
 public/packs
 .env
+
+# Ignore docker/storage/db
+docker/storage/db
