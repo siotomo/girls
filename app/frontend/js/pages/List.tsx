@@ -43,9 +43,7 @@ const List: React.FC = () => {
       <div className="list_search_result_area">
         {
           !!girls.length && (
-            girls.map((girl) => (
-              <SearchResultCard girl={girl} key={girl.id}/>
-            ))
+            girls.map((girl) => <SearchResultCard girl={girl} key={girl.id}/>)
           )
         }
       </div>

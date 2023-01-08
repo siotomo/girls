@@ -3,8 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Box, CardActionArea } from '@mui/material';
 
 type Props = {
   girl: Girl;
@@ -18,8 +17,11 @@ type Girl = {
 
 const SearchResultCard: React.FC<Props> = ({ girl }) => {
   return (
-    <Link className="m-width300px" to={`/girls/${girl.id}`}>
-      <Card sx={{ maxWidth: 350 }} className="m-margin10px">
+    <Box m={1}>
+      <Card
+        sx={{ minWidth: 300 }}
+        onClick={() => { location.replace(`/girls/${girl.id}`)}}
+      >
         <CardActionArea>
           <CardMedia component="img" height="140" image="/mamekiti.png" alt="green iguana" />
           <CardContent>
@@ -35,7 +37,7 @@ const SearchResultCard: React.FC<Props> = ({ girl }) => {
           </CardContent>
         </CardActionArea>
       </Card>
-    </Link>
+    </Box>
   );
 };
 
