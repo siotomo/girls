@@ -2,6 +2,6 @@
 
 class GirlsController < ApplicationController
   def index
-    p 'hoooo'
+    Rails.logger.debug 'hoooo'
   end
 end
