@@ -8,18 +8,18 @@ class Scraping::Girl
 
   def scrape
     {
-      # name: name,
-      # age: age,
-      # height: height,
-      # bra_size: bra_size,
-      # waist_size: waist_size,
-      # description: description,
-      # # 個性
-      # personalities: personalities,
-      # # 性格
-      # character: character,
+      name: name,
+      age: age,
+      height: height,
+      bra_size: bra_size,
+      waist_size: waist_size,
+      description: description,
+      # 個性
+      personalities: personalities,
+      # 性格
+      character: character,
       shifts: @shift.exec,
-      # images: images
+      images: images
     }
   end
 

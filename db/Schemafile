@@ -8,34 +8,9 @@ create_table "girls", id: :bigint, force: :cascade, charset: 'utf8mb4' do |t|
   t.integer "hip"
   t.integer "age"
   t.integer "score"
-  t.integer "height"
-  t.string "bra_size"
-  t.integer "waist_size"
   t.integer "store_id", null: false
   t.integer "city_heven_id", null: false
   t.index ["store_id"], name: "index_girls_on_store_id"
-  t.datetime "created_at", precision: 6, null: false
-  t.datetime "updated_at", precision: 6, null: false
-end
-
-create_table "girl_details", id: :bigint, force: :cascade, charset: 'utf8mb4' do |t|
-  t.text "description"
-  t.integer "girl_id", null: false
-  t.datetime "created_at", precision: 6, null: false
-  t.datetime "updated_at", precision: 6, null: false
-end
-
-create_table "girl_images", id: :bigint, force: :cascade, charset: 'utf8mb4' do |t|
-  t.string "url"
-  t.integer "girl_detail_id", null: false
-  t.datetime "created_at", precision: 6, null: false
-  t.datetime "updated_at", precision: 6, null: false
-end
-
-create_table "shifts", id: :bigint, force: :cascade, charset: 'utf8mb4' do |t|
-  t.integer "girl_detail_id", null: false
-  t.datetime "shift_time"
-  t.integer "shift_type"
   t.datetime "created_at", precision: 6, null: false
   t.datetime "updated_at", precision: 6, null: false
 end

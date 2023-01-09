@@ -106,16 +106,7 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
-<<<<<<< Updated upstream
     pkg-config (1.5.1)
-=======
-    pry (0.14.1)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
-    pry-byebug (3.10.1)
-      byebug (~> 11.0)
-      pry (>= 0.13, < 0.15)
->>>>>>> Stashed changes
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -158,13 +149,9 @@ GEM
     ridgepole (1.2.0)
       activerecord (>= 5.1, < 7.1)
       diffy
-<<<<<<< Updated upstream
     rmagick (5.1.0)
       pkg-config (~> 1.4)
     rubocop (1.37.1)
-=======
-    rubocop (1.42.0)
->>>>>>> Stashed changes
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.2.1)
@@ -183,27 +170,9 @@ GEM
     ruby-debug-ide (0.7.3)
       rake (>= 0.8.1)
     ruby-progressbar (1.11.0)
-<<<<<<< HEAD
     seed_dump (3.3.1)
       activerecord (>= 4)
       activesupport (>= 4)
-=======
-    rubyzip (2.3.2)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
-    selenium-webdriver (4.7.1)
-      rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2, < 3.0)
-      websocket (~> 1.0)
->>>>>>> 88d5ef8 (seleniumでデータ取得をいったんcommit)
     simpacker (1.2.1)
       railties (>= 4.2)
     sprockets (4.1.1)

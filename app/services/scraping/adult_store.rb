@@ -7,7 +7,7 @@ class Scraping::AdultStore
   def initialize(url)
     @url = url
     options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--user-agent=hogehoge')
+    options.add_argument('--user-agent=test')
     options.add_argument('--single-process')
     options.add_argument('--disable-application-cache')
     options.add_argument('--ignore-certificate-errors')
