@@ -46,3 +46,4 @@ gem 'rmagick' # 画像加工(リサイズなど)
 gem 'simpacker'
 gem 'pry-byebug'
 gem 'selenium-webdriver'
+gem 'nokogiri'

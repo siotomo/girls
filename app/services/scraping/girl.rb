@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Scraping::Girl
-  def initialize(url)
-    girl_id = "30734198"
-    @shift = Scraping::Shift.new(girl_id)
+  def initialize(girl_id, driver)
+    @girl_show_url = "#{Scraping::Scraper::CITY_HEAVEN_DOMAIN}tokyo/A1316/A131603/ultra-galaxy/girlid-#{girl_id}/"
+    @shift = Scraping::Shift.new(girl_id, driver)
   end
 
   def scrape

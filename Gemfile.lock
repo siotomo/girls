@@ -106,7 +106,16 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
+<<<<<<< Updated upstream
     pkg-config (1.5.1)
+=======
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.10.1)
+      byebug (~> 11.0)
+      pry (>= 0.13, < 0.15)
+>>>>>>> Stashed changes
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -149,9 +158,13 @@ GEM
     ridgepole (1.2.0)
       activerecord (>= 5.1, < 7.1)
       diffy
+<<<<<<< Updated upstream
     rmagick (5.1.0)
       pkg-config (~> 1.4)
     rubocop (1.37.1)
+=======
+    rubocop (1.42.0)
+>>>>>>> Stashed changes
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.2.1)
@@ -224,13 +237,16 @@ DEPENDENCIES
   listen (~> 3.3)
 <<<<<<< HEAD
   mysql2 (>= 0.4.4)
+<<<<<<< Updated upstream
 =======
+=======
+  nokogiri
+>>>>>>> Stashed changes
   pry-byebug
 >>>>>>> 88d5ef8 (seleniumでデータ取得をいったんcommit)
   puma (~> 5.0)
   rails (~> 6.1.5)
   ridgepole
-  rmagick
   rubocop (~> 1.22)
   rubocop-rails (~> 2.12)
   ruby-debug-ide
