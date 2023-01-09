@@ -1,3 +1,22 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.7.5
+  Exclude:
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'vendor/bundle/**/*'
+    - 'server/**/*'
+    - 'lib/**/*'
+    - 'utils/**/*'
+    - 'public/**/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'docker/**/*'
+
 # ここに不要だと思う設定は書いていく
 Style/Documentation:
   Enabled: false
