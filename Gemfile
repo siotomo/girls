@@ -21,6 +21,7 @@ gem 'graphiql-rails'
 gem 'graphql'
 
 # DB
+gem 'enumerize'
 gem 'ridgepole'
 
 group :development, :test do

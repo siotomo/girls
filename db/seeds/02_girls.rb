@@ -3,23 +3,23 @@
 girls = [
   {
     store_id: 1,
-    name: 'しずく',
-    age: 22
+    name: '桃乃木みく',
+    city_heven_id: 35_975_863
   },
   {
     store_id: 1,
-    name: '中原かりん',
-    age: 24
+    name: '桜井ハイネ',
+    city_heven_id: 43_715_926
+  },
+  {
+    store_id: 1,
+    name: 'ゆづき',
+    city_heven_id: 38_778_822
   },
   {
     store_id: 1,
     name: '佐藤りんか',
-    age: 19
-  },
-  {
-    store_id: 1,
-    name: 'はな',
-    age: 27
+    city_heven_id: 38_550_414
   }
 ]
 Girl.delete_all

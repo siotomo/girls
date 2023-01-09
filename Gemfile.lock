@@ -71,6 +71,8 @@ GEM
       debase-ruby_core_source (>= 0.10.2)
     debase-ruby_core_source (0.10.17)
     diffy (3.4.2)
+    enumerize (2.5.0)
+      activesupport (>= 3.2)
     erubi (1.11.0)
     ffi (1.15.5)
     foreman (0.87.2)
@@ -193,6 +195,7 @@ DEPENDENCIES
   byebug
   code-scanning-rubocop (~> 0.6.1)
   debase
+  enumerize
   foreman
   graphiql-rails
   graphql
