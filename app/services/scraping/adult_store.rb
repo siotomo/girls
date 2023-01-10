@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-require 'benchmark'
 
 class Scraping::AdultStore
   GIRL_LIST_PATH = 'girllist/'
+  PAGE_NO = 3
 
   def initialize(url)
     @url = url
@@ -12,22 +12,23 @@ class Scraping::AdultStore
     options.add_argument('--disable-application-cache')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--start-maximized')
-    @driver = Selenium::WebDriver.for :chrome, options: options
+    client = Selenium::WebDriver::Remote::Http::Default.new
+    client.read_timeout = 1000000
+    @driver = Selenium::WebDriver.for :chrome, options: options, http_client: client
   end
 
   def scrape_girl_list
-    @driver.get "#{@url}#{GIRL_LIST_PATH}"
-    girl_ids = @driver.find_elements(:class, "girllistimg").map do |element|
-      element.find_elements(:tag_name, "a")[1]
-             .attribute("href").match(/girlid=(.*)/)[1]
-    end
-
-    girl_ids.each do |girl_id|
-      result = Benchmark.realtime do
-        girl = Scraping::Girl.new(girl_id, @driver)
-        girl.scrape
+    2.upto(PAGE_NO) do |current_page|
+      @driver.get "#{@url}#{GIRL_LIST_PATH}#{current_page}"
+      city_heven_ids = @driver.find_elements(:class, "girllistimg").map do |element|
+        element.find_elements(:tag_name, "a")[1]
+              .attribute("href").match(/girlid=(.*)/)[1]
       end
-      puts "処理概要 #{result}s"
+
+      city_heven_ids.each do |city_heven_id|
+        girl = Scraping::Girl.new(city_heven_id, @driver)
+        girl.scrape_and_save_data
+      end
     end
   end
 end

@@ -1,48 +1,65 @@
 # frozen_string_literal: true
 
 class Scraping::Girl
-  def initialize(girl_id, driver)
-    @girl_show_url = "#{Scraping::Scraper::CITY_HEAVEN_DOMAIN}tokyo/A1316/A131603/ultra-galaxy/girlid-#{girl_id}/"
-    @shift = Scraping::Shift.new(girl_id, driver)
+  def initialize(city_heven_id, driver)
+    @driver = driver
+    @city_heven_id = city_heven_id
   end
 
-  def scrape
-    {
+  def scrape_and_save_data
+    p "start_scraping: #{@city_heven_id}"
+    girl_show_url = "#{Scraping::Scraper::CITY_HEAVEN_DOMAIN}tokyo/A1316/A131603/ultra-galaxy/girlid-#{@city_heven_id}/"
+    @driver.get girl_show_url
+    girl = Girl.find_or_create_by({
       name: name,
       age: age,
-      height: height,
-      bra_size: bra_size,
-      waist_size: waist_size,
-      description: description,
-      # 個性
-      personalities: personalities,
-      # 性格
-      character: character,
-      shifts: @shift.exec,
-      images: images
-    }
-  end
+      tall: tall,
+      bust: bust,
+      west: west,
+      hip: hip,
+      score: 20,
+      store_id: 1,
+      city_heven_id: @city_heven_id
+    })
 
-  def name
-    @girl_show_html.css('#profiles > table > tr')[0].children[3].text
-  end
-
-  def age
-    @girl_show_html.css('#profiles > table > tr')[1].children[3].text
-  end
-
-  def height
-    girls_proportion.match(/T(\d{3})/).match(/T(\d{3})/)[1]
+    shift = Scraping::Shift.new(@city_heven_id, @driver, girl.id)
+    shift_attributes = shift.build_attributes
+    Shift.insert_all(shift_attributes) if shift_attributes.present?
+    p "finished_scraping: #{@city_heven_id}"
   end
 
   private
+
+  def name
+    @driver.find_element(:id, "p_data").find_elements(tag_name: "td")[0].text
+  end
+
+  def age
+    @driver.find_element(:id, "p_data").find_elements(tag_name: "td")[1].text.gsub('歳', '')
+  end
+
+  def tall
+    girls_proportion.match(/T(\d{3})/)[1]
+  end
+
+  def bust
+    girls_proportion.match(/\([A-Z]\)/)[0].gsub("(", "").gsub(")", "")
+  end
+
+  def west
+    girls_proportion.split("・")[2]
+  end
+
+  def hip
+    girls_proportion.split("・")[3]
+  end
 
   def remove_space(text)
     text.gsub(/\s/, '')
   end
 
   def girls_proportion
-    remove_space(@girl_show_html.css('#profiles > table > tr')[2].children[3].text)
+    remove_space(@driver.find_element(:id, "p_data").find_elements(tag_name: "td")[2].text)
   end
 end
 
