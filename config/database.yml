@@ -15,7 +15,8 @@ default: &default
   pool: 30
   username: root
   password: password
-  host: db
+  host: 127.0.0.1
+  port: 7303
 
 development:
   <<: *default
