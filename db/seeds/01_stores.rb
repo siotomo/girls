@@ -1,10 +1,3 @@
-# frozen_string_literal: true
-
-stores = [
-  {
-    id: 1,
-    name: 'ギャラクシー'
-  }
-]
-Store.delete_all
-Store.create!(stores)
+Store.upsert_all([
+  {name: 'ギャラクシー', created_at: "2023-01-11 11:53:18", updated_at: "2023-01-11 11:53:18"}
+])

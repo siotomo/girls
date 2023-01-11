@@ -1,9 +1,8 @@
-Girl.create!([
-  {name: "桃乃木みく", tall: nil, bust: "A", west: nil, hip: nil, age: nil, score: nil, store_id: 1, city_heven_id: 35975863},
-  {name: "桜井ハイネ", tall: nil, bust: "A", west: nil, hip: nil, age: nil, score: nil, store_id: 1, city_heven_id: 43715926},
-  {name: "ゆづき", tall: nil, bust: "A", west: nil, hip: nil, age: nil, score: nil, store_id: 1, city_heven_id: 38778822},
-  {name: "佐藤りんか", tall: nil, bust: "A", west: nil, hip: nil, age: nil, score: nil, store_id: 1, city_heven_id: 38550414}
-])
-Store.create!([
-  {name: "ギャラクシー"}
-])
+Dir.glob('./db/seeds/*.rb').sort.each do |file|
+  start_time = Time.zone.now
+  p "[#{start_time.iso8601}]-------import: #{file}"
+  load(file)
+  end_time = Time.zone.now
+  processing_time = (end_time - start_time).to_i
+  p "[#{end_time.iso8601}]-------end: #{file}--processing_time: #{processing_time}"
+end
