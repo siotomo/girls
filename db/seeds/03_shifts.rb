@@ -1,4 +1,4 @@
-Shift.create!([
+Shift.upsert_all([
   {girl_id: 1, start_time: "2023-01-12 11:00:00", status: "vacant", is_latest: false},
   {girl_id: 1, start_time: "2023-01-12 11:30:00", status: "vacant", is_latest: false},
   {girl_id: 1, start_time: "2023-01-12 12:00:00", status: "vacant", is_latest: false},

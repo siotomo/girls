@@ -1,4 +1,4 @@
-Girl.create!([
+Girl.upsert_all([
   {name: "のあ", tall: 149, bust: "C", west: 56, hip: 84, age: 20, score: 20, store_id: 1, city_heven_id: 30734198},
   {name: "ゆい", tall: 154, bust: "F", west: 58, hip: 89, age: 19, score: 20, store_id: 1, city_heven_id: 41380249},
   {name: "ゆづき", tall: 151, bust: "F", west: 57, hip: 86, age: 18, score: 20, store_id: 1, city_heven_id: 38778822},
