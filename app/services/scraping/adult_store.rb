@@ -19,7 +19,7 @@ module Scraping
     end
 
     def scrape_girl_list
-      2.upto(PAGE_NO) do |current_page|
+      1.upto(PAGE_NO) do |current_page|
         @driver.get "#{@url}#{GIRL_LIST_PATH}#{current_page}"
         city_heven_ids = @driver.find_elements(:class, 'girllistimg').map do |element|
           element.find_elements(:tag_name, 'a')[1]

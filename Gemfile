@@ -36,6 +36,7 @@ group :development do
   gem 'debase'
   gem 'foreman'
   gem 'ruby-debug-ide'
+  gem 'pry-byebug'
   # rubocop
   gem 'code-scanning-rubocop', '~> 0.6.1'
   gem 'rubocop', '~> 1.22', require: false
@@ -44,5 +45,4 @@ end
 
 gem 'rmagick' # 画像加工(リサイズなど)
 gem 'simpacker'
-gem 'pry-byebug'
 gem 'selenium-webdriver'

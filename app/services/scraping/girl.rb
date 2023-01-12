@@ -11,21 +11,20 @@ module Scraping
       Rails.logger.debug "start_scraping: #{@city_heven_id}"
       girl_show_url = "#{Scraping::Scraper::CITY_HEAVEN_DOMAIN}tokyo/A1316/A131603/ultra-galaxy/girlid-#{@city_heven_id}/"
       @driver.get girl_show_url
-      girl = Girl.find_or_create_by({
-                                      name: name,
-                                      age: age,
-                                      tall: tall,
-                                      bust: bust,
-                                      west: west,
-                                      hip: hip,
-                                      score: 20,
-                                      store_id: 1,
-                                      city_heven_id: @city_heven_id
-                                    })
-
-      shift = Scraping::Shift.new(@city_heven_id, @driver, girl.id)
-      shift_attributes = shift.build_attributes
-      Shift.insert_all(shift_attributes) if shift_attributes.present?
+      # girl = ::Girl.find_or_create_by({
+      #                                 name: name,
+      #                                 age: age,
+      #                                 tall: tall,
+      #                                 bust: bust,
+      #                                 west: west,
+      #                                 hip: hip,
+      #                                 score: 20,
+      #                                 store_id: 1,
+      #                                 city_heven_id: @city_heven_id
+      #                               })
+      shift_attributes = Scraping::Shift.build_attributes(@city_heven_id, @driver, 1)
+      binding.pry
+      # ::Shift.insert_all(shift_attributes) if shift_attributes.present?
       Rails.logger.debug "finished_scraping: #{@city_heven_id}"
     end
 
